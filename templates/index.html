@@ -1,0 +1,956 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>VAIBHAV SHUKLA | SYSTEM INTERFACE</title>
+
+    <meta
+        name="description"
+        content="Vaibhav Shukla — Content Creator, Web Developer, Video Editor and Canva Designer."
+    >
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <!-- =========================
+         SYSTEM BOOT SCREEN
+    ========================== -->
+
+    <div id="bootScreen" class="boot-screen">
+
+        <div class="boot-grid"></div>
+
+        <div class="boot-content">
+
+            <div class="boot-symbol">
+                <div class="boot-ring"></div>
+                <div class="boot-core"></div>
+            </div>
+
+            <p class="boot-label">PERSONAL INTERFACE</p>
+
+            <h1>VAIBHAV SYSTEM</h1>
+
+            <div class="boot-status">
+                <span id="bootText">INITIALIZING SYSTEM...</span>
+            </div>
+
+            <div class="boot-progress">
+                <div id="bootProgress"></div>
+            </div>
+
+            <p class="boot-version">
+                SYSTEM VERSION 01.0
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         MAIN INTERFACE
+    ========================== -->
+
+    <main id="mainInterface" class="main-interface">
+
+        <!-- Background grid -->
+        <div class="background-grid"></div>
+
+        <!-- Scanline -->
+        <div class="scanline"></div>
+
+
+        <!-- =========================
+             HUD CORNERS
+        ========================== -->
+
+        <div class="hud-corner top-left"></div>
+        <div class="hud-corner top-right"></div>
+        <div class="hud-corner bottom-left"></div>
+        <div class="hud-corner bottom-right"></div>
+
+
+        <!-- =========================
+             TOP HUD
+        ========================== -->
+
+        <header class="top-hud">
+
+            <div class="system-id">
+
+                <span class="status-dot"></span>
+
+                <div>
+                    <small>SYSTEM ID</small>
+                    <strong>VS-01</strong>
+                </div>
+
+            </div>
+
+
+            <div class="top-center">
+
+                <span class="top-line"></span>
+
+                <span>PERSONAL COMMAND INTERFACE</span>
+
+                <span class="top-line"></span>
+
+            </div>
+
+
+            <div class="system-time">
+
+                <span id="systemTime">00:00:00</span>
+
+                <small>LOCAL SYSTEM TIME</small>
+
+            </div>
+
+        </header>
+
+
+        <!-- =========================
+             NAVIGATION
+        ========================== -->
+
+        <nav class="main-nav">
+
+            <button
+                class="nav-button active"
+                onclick="scrollToSection('home')"
+            >
+                <span>01</span>
+                HOME
+            </button>
+
+            <button
+                class="nav-button"
+                onclick="scrollToSection('about')"
+            >
+                <span>02</span>
+                PROFILE
+            </button>
+
+            <button
+                class="nav-button"
+                onclick="scrollToSection('skills')"
+            >
+                <span>03</span>
+                SKILLS
+            </button>
+
+            <button
+                class="nav-button"
+                onclick="scrollToSection('projects')"
+            >
+                <span>04</span>
+                PROJECTS
+            </button>
+
+            <button
+                class="nav-button"
+                onclick="scrollToSection('contact')"
+            >
+                <span>05</span>
+                CONTACT
+            </button>
+
+        </nav>
+
+
+        <!-- =========================
+             HERO / HOME
+        ========================== -->
+
+        <section id="home" class="hero-section">
+
+            <div class="hero-left">
+
+                <div class="classification">
+                    <span></span>
+                    PERSONAL CREATIVE SYSTEM
+                </div>
+
+                <p class="hero-intro">
+                    WELCOME TO THE DIGITAL INTERFACE OF
+                </p>
+
+                <h1 class="hero-name">
+                    VAIBHAV<br>
+                    <span>SHUKLA</span>
+                </h1>
+
+                <div class="hero-role">
+
+                    <span class="role-line"></span>
+
+                    <span>CONTENT CREATOR</span>
+
+                    <span class="role-line"></span>
+
+                </div>
+
+                <p class="hero-description">
+                    Creating digital experiences through
+                    content, web development, video editing
+                    and visual design.
+                </p>
+
+
+                <div class="hero-actions">
+
+                    <button
+                        class="primary-button"
+                        onclick="openSystem()"
+                    >
+                        <span class="button-icon">◈</span>
+                        ENTER SYSTEM
+                    </button>
+
+                    <a
+                        href="https://www.youtube.com/@EduxVaibhav"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="secondary-button"
+                    >
+                        WATCH CONTENT
+                        <span>↗</span>
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- =========================
+                 CENTRAL CORE
+            ========================== -->
+
+            <div class="core-area">
+
+                <div class="core-label label-top">
+                    ENERGY CORE
+                </div>
+
+                <div class="core">
+
+                    <div class="core-outer outer-one"></div>
+                    <div class="core-outer outer-two"></div>
+                    <div class="core-outer outer-three"></div>
+
+                    <div class="core-ring ring-one"></div>
+                    <div class="core-ring ring-two"></div>
+                    <div class="core-ring ring-three"></div>
+
+                    <div class="core-lines"></div>
+
+                    <div class="core-center">
+                        <span>VS</span>
+                    </div>
+
+                </div>
+
+                <div class="core-label label-bottom">
+                    SYSTEM ONLINE
+                </div>
+
+            </div>
+
+
+            <!-- =========================
+                 RIGHT SYSTEM PANEL
+            ========================== -->
+
+            <div class="system-panel">
+
+                <div class="panel-header">
+
+                    <div>
+                        <small>SYSTEM MODULES</small>
+                        <h2>CAPABILITIES</h2>
+                    </div>
+
+                    <span class="panel-code">
+                        05
+                    </span>
+
+                </div>
+
+
+                <div class="module-list">
+
+                    <button
+                        class="module"
+                        onclick="openModule('CONTENT')"
+                    >
+
+                        <div class="module-number">
+                            01
+                        </div>
+
+                        <div class="module-info">
+                            <strong>CONTENT</strong>
+                            <small>CREATION SYSTEM</small>
+                        </div>
+
+                        <span class="module-arrow">→</span>
+
+                    </button>
+
+
+                    <button
+                        class="module"
+                        onclick="openModule('WEB DEVELOPMENT')"
+                    >
+
+                        <div class="module-number">
+                            02
+                        </div>
+
+                        <div class="module-info">
+                            <strong>WEB DEVELOPMENT</strong>
+                            <small>DIGITAL SYSTEMS</small>
+                        </div>
+
+                        <span class="module-arrow">→</span>
+
+                    </button>
+
+
+                    <button
+                        class="module"
+                        onclick="openModule('VIDEO EDITING')"
+                    >
+
+                        <div class="module-number">
+                            03
+                        </div>
+
+                        <div class="module-info">
+                            <strong>VIDEO EDITING</strong>
+                            <small>VISUAL PROCESSING</small>
+                        </div>
+
+                        <span class="module-arrow">→</span>
+
+                    </button>
+
+
+                    <button
+                        class="module"
+                        onclick="openModule('CANVA DESIGN')"
+                    >
+
+                        <div class="module-number">
+                            04
+                        </div>
+
+                        <div class="module-info">
+                            <strong>CANVA DESIGN</strong>
+                            <small>CREATIVE ENGINE</small>
+                        </div>
+
+                        <span class="module-arrow">→</span>
+
+                    </button>
+
+
+                    <button
+                        class="module"
+                        onclick="openModule('CREATIVE PROJECTS')"
+                    >
+
+                        <div class="module-number">
+                            05
+                        </div>
+
+                        <div class="module-info">
+                            <strong>PROJECTS</strong>
+                            <small>ACTIVE OPERATIONS</small>
+                        </div>
+
+                        <span class="module-arrow">→</span>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             PROFILE
+        ========================== -->
+
+        <section id="about" class="interface-section">
+
+            <div class="section-heading">
+
+                <span>02 / PROFILE</span>
+
+                <h2>WHO IS <strong>VAIBHAV?</strong></h2>
+
+                <p>
+                    CREATOR PROFILE // PERSONAL DATA
+                </p>
+
+            </div>
+
+
+            <div class="profile-grid">
+
+                <div class="profile-card large-card">
+
+                    <span class="card-code">
+                        PROFILE_01 // IDENTITY
+                    </span>
+
+                    <h3>
+                        VAIBHAV<br>
+                        SHUKLA
+                    </h3>
+
+                    <p>
+                        Class 11 student and digital creator exploring
+                        technology, creativity and content. Currently
+                        studying PCM with Computer Science while
+                        building real-world digital projects.
+                    </p>
+
+                    <div class="skill-tags">
+                        <span>CLASS 11</span>
+                        <span>PCM</span>
+                        <span>COMPUTER SCIENCE</span>
+                    </div>
+
+                </div>
+
+
+                <div class="profile-card">
+
+                    <span class="card-code">
+                        EDUCATION // STATUS
+                    </span>
+
+                    <div class="big-value">
+                        ACTIVE
+                    </div>
+
+                    <p>
+                        <strong>CLASS 11</strong><br>
+                        PCM + COMPUTER SCIENCE
+                    </p>
+
+                    <p>
+                        CLASS 10 — COMPLETED
+                    </p>
+
+                    <div class="skill-tags">
+                        <span>LEARNING</span>
+                        <span>BUILDING</span>
+                    </div>
+
+                </div>
+
+
+                <div class="profile-card">
+
+                    <span class="card-code">
+                        ACHIEVEMENT // TECH
+                    </span>
+
+                    <h3 style="font-size: 26px; margin-top: 32px;">
+                        BEST STUDENT
+                    </h3>
+
+                    <p>
+                        Best Student Award — Class 9
+                    </p>
+
+                    <div class="skill-tags">
+                        <span>PYTHON</span>
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>JAVASCRIPT</span>
+                        <span>FLASK</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             SKILLS
+        ========================== -->
+
+        <section id="skills" class="interface-section">
+
+            <div class="section-heading">
+
+                <span>03 / SYSTEM CAPABILITIES</span>
+
+                <h2>CORE <strong>SKILLS</strong></h2>
+
+                <p>
+                    CREATIVE & DIGITAL PROCESSING MODULES
+                </p>
+
+            </div>
+
+
+            <div class="skills-grid">
+
+                <div class="skill-card">
+
+                    <div class="skill-top">
+                        <span>01</span>
+                        <span>CREATIVE</span>
+                    </div>
+
+                    <h3>CANVA DESIGN</h3>
+
+                    <div class="skill-meter">
+                        <span style="width: 90%;"></span>
+                    </div>
+
+                    <small>DESIGN PROCESSING</small>
+
+                </div>
+
+
+                <div class="skill-card">
+
+                    <div class="skill-top">
+                        <span>02</span>
+                        <span>TECH</span>
+                    </div>
+
+                    <h3>WEB DEVELOPMENT</h3>
+
+                    <div class="skill-meter">
+                        <span style="width: 82%;"></span>
+                    </div>
+
+                    <small>DIGITAL DEVELOPMENT</small>
+
+                </div>
+
+
+                <div class="skill-card">
+
+                    <div class="skill-top">
+                        <span>03</span>
+                        <span>MEDIA</span>
+                    </div>
+
+                    <h3>VIDEO EDITING</h3>
+
+                    <div class="skill-meter">
+                        <span style="width: 86%;"></span>
+                    </div>
+
+                    <small>VISUAL PROCESSING</small>
+
+                </div>
+
+
+                <div class="skill-card">
+
+                    <div class="skill-top">
+                        <span>04</span>
+                        <span>MEDIA</span>
+                    </div>
+
+                    <h3>CONTENT CREATION</h3>
+
+                    <div class="skill-meter">
+                        <span style="width: 88%;"></span>
+                    </div>
+
+                    <small>CONTENT SYSTEM</small>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             PROJECTS
+        ========================== -->
+
+        <section id="projects" class="interface-section">
+
+            <div class="section-heading">
+
+                <span>04 / OPERATIONS</span>
+
+                <h2>ACTIVE <strong>PROJECTS</strong></h2>
+
+                <p>
+                    SELECTED DIGITAL OPERATIONS
+                </p>
+
+            </div>
+
+
+            <div class="projects-grid">
+
+                <article class="project-card">
+
+                    <div class="project-number">
+                        01
+                    </div>
+
+                    <div class="project-content">
+
+                        <span>WEB DEVELOPMENT</span>
+
+                        <h3>
+                            GARG GREEN ENERGY
+                        </h3>
+
+                        <p>
+                            Professional solar and renewable
+                            energy company website.
+                        </p>
+
+                        <a
+                            href="https://garg-green-energy-portal.onrender.com"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="project-action"
+                        >
+                            OPEN LIVE PROJECT ↗
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+                <article class="project-card">
+
+                    <div class="project-number">
+                        02
+                    </div>
+
+                    <div class="project-content">
+
+                        <span>WEB DEVELOPMENT</span>
+
+                        <h3>
+                            SHIVA ACADEMY
+                        </h3>
+
+                        <p>
+                            Educational website project built
+                            as a live web application.
+                        </p>
+
+                        <a
+                            href="https://shiva-academy-tq7j.onrender.com"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="project-action"
+                        >
+                            OPEN LIVE PROJECT ↗
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+                <article class="project-card">
+
+                    <div class="project-number">
+                        03
+                    </div>
+
+                    <div class="project-content">
+
+                        <span>ESPORTS / WEB DEVELOPMENT</span>
+
+                        <h3>
+                            ESPORTS CAREER CONTINUITY
+                        </h3>
+
+                        <p>
+                            A career-continuity project focused
+                            on esports player profiles and careers.
+                        </p>
+
+                        <a
+                            href="https://ecc-career-continuity.onrender.com/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="project-action"
+                        >
+                            OPEN LIVE PROJECT ↗
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+                <article class="project-card">
+
+                    <div class="project-number">
+                        04
+                    </div>
+
+                    <div class="project-content">
+
+                        <span>CANVA PRESENTATION</span>
+
+                        <h3>
+                            PPT 1
+                        </h3>
+
+                        <p>
+                            Creative presentation project
+                            designed in Canva.
+                        </p>
+
+                        <a
+                            href="https://www.canva.com/design/DAHTZJFh4tw/UYxIBJgloiQBTvrFKAKPbA/edit"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="project-action"
+                        >
+                            OPEN PRESENTATION ↗
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+                <article class="project-card">
+
+                    <div class="project-number">
+                        05
+                    </div>
+
+                    <div class="project-content">
+
+                        <span>CANVA PRESENTATION</span>
+
+                        <h3>
+                            PPT 2
+                        </h3>
+
+                        <p>
+                            Creative presentation project
+                            designed in Canva.
+                        </p>
+
+                        <a
+                            href="https://www.canva.com/design/DAHUEHrYtDk/ie1u_zfE-SOVbcQDLyJNBg/edit?utm_content=DAHUEHrYtDk&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="project-action"
+                        >
+                            OPEN PRESENTATION ↗
+                        </a>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             CONTACT
+        ========================== -->
+
+        <section id="contact" class="interface-section contact-section">
+
+            <div class="section-heading">
+
+                <span>05 / COMMUNICATION</span>
+
+                <h2>OPEN A <strong>CHANNEL</strong></h2>
+
+                <p>
+                    ESTABLISH DIGITAL CONNECTION
+                </p>
+
+            </div>
+
+
+            <div class="contact-interface">
+
+                <div class="contact-main">
+
+                    <div class="signal">
+
+                        <span class="signal-dot"></span>
+
+                        <div>
+                            <small>COMMUNICATION STATUS</small>
+                            <strong>CHANNEL READY</strong>
+                        </div>
+
+                    </div>
+
+                    <h3>
+                        LET'S BUILD<br>
+                        SOMETHING <span>CREATIVE.</span>
+                    </h3>
+
+                    <p>
+                        For collaborations, creative projects,
+                        digital work or simply connecting,
+                        use the available channel below.
+                    </p>
+
+                    <a
+                        href="https://www.youtube.com/@EduxVaibhav"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="youtube-channel"
+                    >
+                        <span>▶</span>
+                        YOUTUBE CHANNEL
+                        <b>↗</b>
+                    </a>
+
+                </div>
+
+
+                <div class="contact-radar">
+
+                    <div class="radar-circle circle-a"></div>
+                    <div class="radar-circle circle-b"></div>
+                    <div class="radar-circle circle-c"></div>
+
+                    <div class="radar-scan"></div>
+
+                    <div class="radar-center">
+                        VS
+                    </div>
+
+                    <span class="radar-label radar-top">
+                        CHANNEL
+                    </span>
+
+                    <span class="radar-label radar-right">
+                        READY
+                    </span>
+
+                    <span class="radar-label radar-bottom">
+                        ONLINE
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             FOOTER
+        ========================== -->
+
+        <footer class="system-footer">
+
+            <div>
+                VAIBHAV SHUKLA
+            </div>
+
+            <div>
+                PERSONAL DIGITAL INTERFACE
+            </div>
+
+            <div>
+                SYSTEM ONLINE
+                <span class="status-dot"></span>
+            </div>
+
+        </footer>
+
+    </main>
+
+
+    <!-- =========================
+         MODULE POPUP
+    ========================== -->
+
+    <div id="moduleOverlay" class="module-overlay">
+
+        <div class="module-window">
+
+            <button
+                class="close-module"
+                onclick="closeSystem()"
+            >
+                ×
+            </button>
+
+            <div class="window-top">
+
+                <span>SYSTEM MODULE</span>
+
+                <span id="moduleStatus">
+                    ONLINE
+                </span>
+
+            </div>
+
+            <div class="window-content">
+
+                <div class="window-icon">
+                    ◈
+                </div>
+
+                <p class="window-label">
+                    MODULE ACCESS
+                </p>
+
+                <h2 id="moduleTitle">
+                    SYSTEM
+                </h2>
+
+                <p id="moduleDescription">
+                    Initializing module...
+                </p>
+
+                <div class="window-loader">
+                    <span></span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+
+</body>
+</html>
