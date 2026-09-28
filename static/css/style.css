@@ -2444,3 +2444,4287 @@ body::after {
         scroll-behavior: auto !important;
     }
 }
+/* =========================================================
+   ⚡ VAIBHAV SHUKLA — CINEMATIC HUD ANIMATION UPGRADE
+   Paste at the END of style.css
+========================================================= */
+
+
+/* =========================================================
+   01. GLOBAL CINEMATIC ENTRANCE
+========================================================= */
+
+.main-interface {
+    animation: interfaceBoot 1.4s cubic-bezier(.2,.8,.2,1) both;
+}
+
+.top-hud {
+    animation: hudDrop 0.9s 0.25s cubic-bezier(.2,.8,.2,1) both;
+}
+
+.hero-left {
+    animation: heroSlide 1s 0.45s cubic-bezier(.16,1,.3,1) both;
+}
+
+.core-area {
+    animation: coreEntrance 1.3s 0.3s cubic-bezier(.16,1,.3,1) both;
+}
+
+.system-panel,
+.interface-section {
+    animation: sectionReveal 0.9s cubic-bezier(.16,1,.3,1) both;
+}
+
+
+/* =========================================================
+   02. ANIMATED BACKGROUND GRID
+========================================================= */
+
+.background-grid {
+    animation: gridDrift 18s linear infinite;
+    transform-origin: center;
+}
+
+.main-interface::after {
+    content: "";
+
+    position: fixed;
+    inset: 0;
+
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent 0%,
+            rgba(0,234,255,0.035) 50%,
+            transparent 100%
+        );
+
+    background-size: 220px 100%;
+
+    animation: ambientSweep 8s linear infinite;
+
+    z-index: 2;
+}
+
+
+/* =========================================================
+   03. CINEMATIC SCANLINE
+========================================================= */
+
+.scanline {
+    height: 2px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(0,234,255,0.15),
+            var(--cyan),
+            rgba(0,234,255,0.15),
+            transparent
+        );
+
+    box-shadow:
+        0 0 8px var(--cyan),
+        0 0 25px rgba(0,234,255,0.5),
+        0 0 60px rgba(0,234,255,0.15);
+
+    animation:
+        scanDown 6s linear infinite,
+        scanGlow 1.8s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   04. CORE — HIGH ENERGY MODE
+========================================================= */
+
+.core {
+    animation: coreFloat 5s ease-in-out infinite;
+}
+
+.core-outer {
+    animation:
+        coreRotate 25s linear infinite,
+        ringGlow 3s ease-in-out infinite;
+}
+
+.outer-two {
+    animation:
+        coreRotateReverse 18s linear infinite,
+        ringGlow 4s ease-in-out infinite;
+}
+
+.outer-three {
+    animation:
+        coreRotate 12s linear infinite,
+        orangeRingPulse 2.5s ease-in-out infinite;
+}
+
+.ring-one {
+    animation:
+        coreRotate 8s linear infinite,
+        ringEnergy 2s ease-in-out infinite;
+}
+
+.ring-two {
+    animation:
+        coreRotateReverse 6s linear infinite,
+        orangeRingPulse 1.8s ease-in-out infinite;
+}
+
+.ring-three {
+    animation:
+        coreRotate 4s linear infinite,
+        ringEnergy 1.4s ease-in-out infinite;
+}
+
+.core-center {
+    animation:
+        corePulse 2s ease-in-out infinite,
+        coreEnergy 3s ease-in-out infinite;
+}
+
+.core-lines {
+    animation: coreLineRotate 8s linear infinite;
+}
+
+
+/* =========================================================
+   05. HERO NAME — DIGITAL GLOW
+========================================================= */
+
+.hero-name {
+    animation: nameReveal 1.1s 0.65s cubic-bezier(.16,1,.3,1) both;
+}
+
+.hero-name span {
+    animation: outlineFlicker 4s ease-in-out infinite;
+}
+
+.hero-role {
+    animation: roleReveal 0.8s 0.95s cubic-bezier(.16,1,.3,1) both;
+}
+
+.hero-description {
+    animation: descriptionReveal 0.9s 1.1s cubic-bezier(.16,1,.3,1) both;
+}
+
+.hero-actions {
+    animation: actionsReveal 0.9s 1.25s cubic-bezier(.16,1,.3,1) both;
+}
+
+
+/* =========================================================
+   06. BUTTON ENERGY EFFECT
+========================================================= */
+
+.primary-button,
+.secondary-button {
+    position: relative;
+    overflow: hidden;
+}
+
+.primary-button::before,
+.secondary-button::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: -120%;
+
+    width: 70%;
+    height: 100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,255,255,0.35),
+            transparent
+        );
+
+    transform: skewX(-20deg);
+
+    transition: left 0.6s ease;
+}
+
+.primary-button:hover::before,
+.secondary-button:hover::before {
+    left: 140%;
+}
+
+.primary-button:active,
+.secondary-button:active {
+    transform: scale(0.96);
+}
+
+
+/* =========================================================
+   07. NAVIGATION HUD EFFECT
+========================================================= */
+
+.nav-button {
+    overflow: hidden;
+}
+
+.nav-button::after {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: -100%;
+
+    width: 100%;
+    height: 100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(0,234,255,0.08),
+            transparent
+        );
+
+    transition: left 0.45s ease;
+}
+
+.nav-button:hover::after,
+.nav-button.active::after {
+    left: 100%;
+}
+
+
+/* =========================================================
+   08. SKILL CARDS — HOLOGRAPHIC HOVER
+========================================================= */
+
+.skill-card {
+    overflow: hidden;
+
+    transform-style: preserve-3d;
+}
+
+.skill-card::before {
+    content: "";
+
+    position: absolute;
+
+    top: -120%;
+    left: -30%;
+
+    width: 40%;
+    height: 350%;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(0,234,255,0.12),
+            transparent
+        );
+
+    transform: rotate(20deg);
+
+    transition: top 0.7s ease;
+}
+
+.skill-card:hover::before {
+    top: -80%;
+}
+
+.skill-card:hover {
+    transform:
+        translateY(-7px)
+        perspective(700px)
+        rotateX(2deg);
+
+    border-color: rgba(0,234,255,0.55);
+
+    box-shadow:
+        0 0 12px rgba(0,234,255,0.22),
+        0 0 35px rgba(0,234,255,0.10);
+}
+
+.skill-meter span {
+    animation: meterPulse 2.5s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   09. PROJECT CARDS
+========================================================= */
+
+.project-card {
+    position: relative;
+    overflow: hidden;
+
+    transform-style: preserve-3d;
+
+    transition:
+        transform 0.4s cubic-bezier(.16,1,.3,1),
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.project-card::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            115deg,
+            transparent 20%,
+            rgba(0,234,255,0.09) 45%,
+            transparent 65%
+        );
+
+    transform: translateX(-120%);
+
+    transition: transform 0.7s ease;
+
+    pointer-events: none;
+}
+
+.project-card:hover::before {
+    transform: translateX(120%);
+}
+
+.project-card:hover {
+    transform:
+        translateY(-8px)
+        perspective(900px)
+        rotateX(2deg)
+        rotateY(-1deg);
+
+    border-color: rgba(0,234,255,0.5);
+
+    box-shadow:
+        0 0 15px rgba(0,234,255,0.16),
+        0 0 45px rgba(0,234,255,0.07);
+}
+
+
+/* =========================================================
+   10. CONTACT / RADAR
+========================================================= */
+
+.radar,
+.radar-circle,
+.radar-ring {
+    animation:
+        radarRotate 12s linear infinite;
+}
+
+.radar::after {
+    content: "";
+
+    position: absolute;
+
+    width: 50%;
+    height: 1px;
+
+    left: 50%;
+    top: 50%;
+
+    transform-origin: left center;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--cyan),
+            transparent
+        );
+
+    box-shadow: 0 0 12px var(--cyan);
+
+    animation: radarSweep 3s linear infinite;
+}
+
+
+/* =========================================================
+   11. HUD CORNERS — PULSE
+========================================================= */
+
+.hud-corner::before,
+.hud-corner::after {
+    animation: cornerPulse 2.8s ease-in-out infinite;
+}
+
+.top-right::before,
+.top-right::after,
+.bottom-right::before,
+.bottom-right::after {
+    animation-delay: 0.8s;
+}
+
+
+/* =========================================================
+   12. BOOT SCREEN EXTRA EFFECT
+========================================================= */
+
+.boot-grid {
+    animation: bootGridMove 12s linear infinite;
+}
+
+.boot-ring {
+    animation:
+        bootSpin 5s linear infinite,
+        bootRingPulse 2s ease-in-out infinite;
+}
+
+.boot-core {
+    animation:
+        corePulse 1.5s ease-in-out infinite,
+        bootCoreGlow 2s ease-in-out infinite;
+}
+
+.boot-content h1 {
+    animation: bootTitle 1.2s ease both;
+}
+
+
+/* =========================================================
+   13. SYSTEM STATUS FLICKER
+========================================================= */
+
+.status-dot {
+    animation:
+        statusBlink 1.6s infinite,
+        statusGlow 2.4s ease-in-out infinite;
+}
+
+.system-time span {
+    animation: timeGlow 3s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   14. KEYFRAMES
+========================================================= */
+
+@keyframes interfaceBoot {
+    from {
+        opacity: 0;
+        filter: brightness(0.2);
+    }
+
+    to {
+        opacity: 1;
+        filter: brightness(1);
+    }
+}
+
+
+@keyframes hudDrop {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+@keyframes heroSlide {
+    from {
+        opacity: 0;
+        transform: translateX(-45px);
+        filter: blur(6px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+        filter: blur(0);
+    }
+}
+
+
+@keyframes coreEntrance {
+    from {
+        opacity: 0;
+        transform: scale(0.55);
+        filter: blur(12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+        filter: blur(0);
+    }
+}
+
+
+@keyframes sectionReveal {
+    from {
+        opacity: 0;
+        transform: translateY(35px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+@keyframes gridDrift {
+    from {
+        background-position: 0 0;
+    }
+
+    to {
+        background-position: 55px 55px;
+    }
+}
+
+
+@keyframes ambientSweep {
+    from {
+        transform: translateX(-100%);
+    }
+
+    to {
+        transform: translateX(100%);
+    }
+}
+
+
+@keyframes scanGlow {
+    0%, 100% {
+        opacity: 0.35;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+
+@keyframes coreFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+
+@keyframes ringGlow {
+    0%, 100% {
+        filter: brightness(0.8);
+    }
+
+    50% {
+        filter: brightness(1.35);
+    }
+}
+
+
+@keyframes orangeRingPulse {
+    0%, 100% {
+        opacity: 0.55;
+    }
+
+    50% {
+        opacity: 1;
+        filter: drop-shadow(0 0 8px rgba(255,106,0,0.5));
+    }
+}
+
+
+@keyframes ringEnergy {
+    0%, 100% {
+        filter: brightness(0.8);
+    }
+
+    50% {
+        filter:
+            brightness(1.6)
+            drop-shadow(0 0 8px rgba(0,234,255,0.5));
+    }
+}
+
+
+@keyframes coreEnergy {
+    0%, 100% {
+        filter:
+            brightness(0.9)
+            drop-shadow(0 0 8px rgba(0,234,255,0.2));
+    }
+
+    50% {
+        filter:
+            brightness(1.35)
+            drop-shadow(0 0 25px rgba(0,234,255,0.65));
+    }
+}
+
+
+@keyframes coreLineRotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+@keyframes nameReveal {
+    from {
+        opacity: 0;
+        letter-spacing: 12px;
+        transform: translateX(-25px);
+        filter: blur(5px);
+    }
+
+    to {
+        opacity: 1;
+        letter-spacing: -2px;
+        transform: translateX(0);
+        filter: blur(0);
+    }
+}
+
+
+@keyframes outlineFlicker {
+    0%, 92%, 100% {
+        opacity: 1;
+    }
+
+    94% {
+        opacity: 0.55;
+    }
+
+    96% {
+        opacity: 0.85;
+    }
+}
+
+
+@keyframes roleReveal {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+@keyframes descriptionReveal {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+@keyframes actionsReveal {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+@keyframes meterPulse {
+    0%, 100% {
+        filter: brightness(0.8);
+    }
+
+    50% {
+        filter:
+            brightness(1.4)
+            drop-shadow(0 0 5px rgba(0,234,255,0.5));
+    }
+}
+
+
+@keyframes cornerPulse {
+    0%, 100% {
+        opacity: 0.65;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+
+@keyframes bootGridMove {
+    from {
+        background-position: 0 0;
+    }
+
+    to {
+        background-position: 50px 50px;
+    }
+}
+
+
+@keyframes bootRingPulse {
+    0%, 100% {
+        box-shadow:
+            0 0 15px var(--cyan-soft),
+            inset 0 0 15px var(--cyan-soft);
+    }
+
+    50% {
+        box-shadow:
+            0 0 30px var(--cyan),
+            inset 0 0 30px var(--cyan-soft);
+    }
+}
+
+
+@keyframes bootCoreGlow {
+    0%, 100% {
+        filter: brightness(0.9);
+    }
+
+    50% {
+        filter: brightness(1.5);
+    }
+}
+
+
+@keyframes bootTitle {
+    from {
+        opacity: 0;
+        letter-spacing: 20px;
+        filter: blur(8px);
+    }
+
+    to {
+        opacity: 1;
+        letter-spacing: 8px;
+        filter: blur(0);
+    }
+}
+
+
+@keyframes statusGlow {
+    0%, 100% {
+        box-shadow:
+            0 0 7px var(--cyan),
+            0 0 15px var(--cyan);
+    }
+
+    50% {
+        box-shadow:
+            0 0 12px var(--cyan),
+            0 0 28px var(--cyan);
+    }
+}
+
+
+@keyframes timeGlow {
+    0%, 100% {
+        text-shadow: 0 0 6px var(--cyan-soft);
+    }
+
+    50% {
+        text-shadow:
+            0 0 12px var(--cyan),
+            0 0 25px var(--cyan-soft);
+    }
+}
+
+
+@keyframes radarSweep {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* =========================================================
+   15. REDUCED MOTION SAFETY
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+    }
+
+}
+
+
+/* =========================================================
+   16. MOBILE PERFORMANCE
+========================================================= */
+
+@media (max-width: 768px) {
+
+    .main-interface::after {
+        display: none;
+    }
+
+    .background-grid {
+        animation-duration: 30s;
+        opacity: 0.35;
+    }
+
+    .core {
+        animation-duration: 7s;
+    }
+
+    .scanline {
+        animation-duration: 8s;
+    }
+
+    .skill-card:hover,
+    .project-card:hover {
+        transform: translateY(-4px);
+    }
+
+}
+
+
+/* =========================================================
+   17. VERY SMALL SCREENS
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .hero-name {
+        animation: none;
+    }
+
+    .core-area {
+        animation-duration: 0.8s;
+    }
+
+    .main-interface::after {
+        display: none;
+    }
+
+    .scanline {
+        opacity: 0.45;
+    }
+
+}
+/* =========================================================
+   ⚡ STEP 4 — RESPONSIVE HUD POLISH
+   Desktop + Laptop + Tablet + Mobile
+========================================================= */
+
+
+/* =========================================================
+   01. DESKTOP — LARGE SCREENS
+========================================================= */
+
+@media (min-width: 1400px) {
+
+    .hero-section {
+        max-width: 1700px;
+        margin: 0 auto;
+    }
+
+    .interface-section {
+        max-width: 1550px;
+    }
+
+    .hero-name {
+        font-size: clamp(65px, 5vw, 90px);
+    }
+
+    .core {
+        width: min(420px, 34vw);
+    }
+
+    .projects-grid {
+        gap: 18px;
+    }
+
+    .project-card {
+        min-height: 390px;
+    }
+}
+
+
+/* =========================================================
+   02. LAPTOP — 1024 TO 1399
+========================================================= */
+
+@media (min-width: 1024px) and (max-width: 1399px) {
+
+    .hero-section {
+        padding-left: 5%;
+        padding-right: 5%;
+
+        grid-template-columns:
+            minmax(300px, 1.1fr)
+            minmax(280px, 0.8fr)
+            minmax(280px, 1fr);
+
+        gap: 20px;
+    }
+
+    .hero-left {
+        padding-left: 60px;
+    }
+
+    .hero-name {
+        font-size: clamp(48px, 5vw, 70px);
+    }
+
+    .core-area {
+        height: 500px;
+    }
+
+    .core {
+        width: min(350px, 32vw);
+    }
+
+    .system-panel {
+        padding: 18px;
+    }
+
+    .interface-section {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    .projects-grid {
+        grid-template-columns:
+            repeat(3, 1fr);
+
+        gap: 10px;
+    }
+
+    .project-card {
+        min-height: 340px;
+        padding: 20px;
+    }
+}
+
+
+/* =========================================================
+   03. TABLET
+========================================================= */
+
+@media (min-width: 761px) and (max-width: 1023px) {
+
+    .top-hud {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    .main-nav {
+        left: 30px;
+    }
+
+    .hero-section {
+        grid-template-columns: 1fr 1fr;
+
+        padding:
+            70px 40px 90px;
+    }
+
+    .hero-left {
+        padding-left: 25px;
+    }
+
+    .hero-name {
+        font-size: clamp(45px, 7vw, 68px);
+    }
+
+    .core-area {
+        height: 400px;
+    }
+
+    .core {
+        width: min(330px, 45vw);
+    }
+
+    .system-panel {
+        grid-column: 2;
+    }
+
+    .profile-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .large-card {
+        grid-column: 1 / -1;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .interface-section {
+        padding:
+            100px 40px;
+    }
+
+    .contact-interface {
+        padding: 40px;
+    }
+}
+
+
+/* =========================================================
+   04. MOBILE NAVIGATION
+========================================================= */
+
+@media (max-width: 760px) {
+
+    html {
+        scroll-padding-top: 70px;
+    }
+
+    body {
+        width: 100%;
+        overflow-x: hidden;
+    }
+
+    .top-hud {
+        position: relative;
+
+        width: 100%;
+
+        height: 72px;
+
+        padding:
+            15px 18px;
+    }
+
+    .system-id strong {
+        font-size: 10px;
+    }
+
+    .system-id small {
+        font-size: 7px;
+    }
+
+    .system-time span {
+        font-size: 10px;
+    }
+
+    .main-nav {
+        width: 100%;
+
+        padding:
+            8px 14px;
+
+        gap: 3px;
+
+        scrollbar-width: none;
+
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .main-nav::-webkit-scrollbar {
+        display: none;
+    }
+
+    .nav-button {
+        flex-shrink: 0;
+
+        padding:
+            9px 11px;
+
+        font-size: 7px;
+    }
+
+    .nav-button::before {
+        display: none;
+    }
+
+    .nav-button:hover,
+    .nav-button.active {
+        transform: none;
+    }
+}
+
+
+/* =========================================================
+   05. MOBILE HERO
+========================================================= */
+
+@media (max-width: 760px) {
+
+    .hero-section {
+        width: 100%;
+
+        padding:
+            55px 20px 70px;
+
+        gap: 35px;
+    }
+
+    .hero-left {
+        width: 100%;
+
+        padding: 0;
+    }
+
+    .classification {
+        margin-bottom: 18px;
+
+        font-size: 7px;
+
+        letter-spacing: 2px;
+    }
+
+    .hero-intro {
+        font-size: 8px;
+
+        letter-spacing: 3px;
+    }
+
+    .hero-name {
+        max-width: 100%;
+
+        font-size:
+            clamp(38px, 12vw, 62px);
+
+        letter-spacing: -1px;
+
+        line-height: 0.95;
+
+        word-break: normal;
+    }
+
+    .hero-role {
+        margin-top: 18px;
+
+        font-size: 8px;
+
+        letter-spacing: 3px;
+    }
+
+    .hero-description {
+        max-width: 100%;
+
+        margin-top: 20px;
+
+        font-size: 14px;
+
+        line-height: 1.6;
+    }
+
+    .hero-actions {
+        width: 100%;
+
+        margin-top: 27px;
+
+        gap: 10px;
+    }
+
+    .primary-button,
+    .secondary-button {
+        min-height: 44px;
+
+        padding:
+            0 15px;
+
+        font-size: 8px;
+    }
+}
+
+
+/* =========================================================
+   06. MOBILE CORE
+========================================================= */
+
+@media (max-width: 760px) {
+
+    .core-area {
+        width: 100%;
+
+        height: 300px;
+
+        overflow: visible;
+    }
+
+    .core {
+        width:
+            min(280px, 78vw);
+
+        max-width: 280px;
+
+        translate: 0 0 !important;
+    }
+
+    .core-label {
+        font-size: 7px;
+
+        letter-spacing: 2px;
+    }
+
+    .core-center span {
+        font-size: 11px;
+    }
+}
+
+
+/* =========================================================
+   07. MOBILE SYSTEM PANEL
+========================================================= */
+
+@media (max-width: 760px) {
+
+    .system-panel {
+        width: 100%;
+
+        padding: 18px;
+
+        clip-path: polygon(
+            0 0,
+            calc(100% - 15px) 0,
+            100% 15px,
+            100% 100%,
+            0 100%
+        );
+    }
+
+    .panel-header h2 {
+        font-size: 13px;
+    }
+
+    .panel-code {
+        font-size: 9px;
+    }
+
+    .module {
+        grid-template-columns:
+            28px 1fr auto;
+
+        padding:
+            14px 3px;
+    }
+
+    .module-info strong {
+        font-size: 8px;
+    }
+
+    .module-info small {
+        font-size: 7px;
+    }
+}
+
+
+/* =========================================================
+   08. MOBILE SECTIONS
+========================================================= */
+
+@media (max-width: 760px) {
+
+    .interface-section {
+        width: 100%;
+
+        padding:
+            75px 20px;
+    }
+
+    .section-heading {
+        margin-bottom: 32px;
+    }
+
+    .section-heading > span {
+        font-size: 7px;
+
+        letter-spacing: 3px;
+    }
+
+    .section-heading h2 {
+        font-size:
+            clamp(30px, 10vw, 48px);
+    }
+
+    .section-heading p {
+        font-size: 8px;
+
+        line-height: 1.5;
+
+        letter-spacing: 2px;
+    }
+}
+
+
+/* =========================================================
+   09. MOBILE PROFILE
+========================================================= */
+
+@media (max-width: 760px) {
+
+    .profile-grid {
+        display: grid;
+
+        grid-template-columns: 1fr;
+
+        gap: 12px;
+    }
+
+    .profile-card {
+        width: 100%;
+
+        min-height: 220px;
+
+        padding: 22px;
+    }
+
+    .profile-card h3 {
+        margin-top: 30px;
+
+        font-size:
+            clamp(27px, 9vw, 42px);
+    }
+
+    .profile-card p {
+        margin-top: 17px;
+
+        font-size: 14px;
+    }
+
+    .big-value {
+        margin-top: 35px;
+
+        font-size: 22px;
+    }
+
+    .skill-tags {
+        margin-top: 30px;
+
+        gap: 6px;
+    }
+
+    .skill-tags span {
+        padding:
+            7px 8px;
+
+        font-size: 7px;
+    }
+}
+
+
+/* =========================================================
+   10. MOBILE SKILLS
+========================================================= */
+
+@media (max-width: 760px) {
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+
+        gap: 12px;
+    }
+
+    .skill-card {
+        min-height: 190px;
+
+        padding: 22px;
+    }
+
+    .skill-card h3 {
+        margin-top: 28px;
+
+        font-size: 17px;
+    }
+
+    .skill-meter {
+        margin-top: 25px;
+    }
+
+    .skill-card:hover {
+        transform: translateY(-3px);
+    }
+}
+
+
+/* =========================================================
+   11. MOBILE PROJECTS
+========================================================= */
+
+@media (max-width: 760px) {
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+
+        gap: 12px;
+    }
+
+    .project-card {
+        width: 100%;
+
+        min-height: 310px;
+
+        padding: 22px;
+
+        transform:
+            translateY(0) !important;
+    }
+
+    .project-card:hover {
+        transform:
+            translateY(-4px) !important;
+    }
+
+    .project-content h3 {
+        font-size: 19px;
+    }
+
+    .project-content p {
+        font-size: 13px;
+    }
+}
+
+
+/* =========================================================
+   12. MOBILE CONTACT
+========================================================= */
+
+@media (max-width: 760px) {
+
+    .contact-section {
+        padding-bottom: 60px;
+    }
+
+    .contact-interface {
+        width: 100%;
+
+        min-height: auto;
+
+        padding:
+            28px 20px;
+
+        gap: 45px;
+    }
+
+    .contact-main h3 {
+        margin-top: 35px;
+
+        font-size:
+            clamp(34px, 11vw, 55px);
+    }
+
+    .contact-main > p {
+        font-size: 14px;
+    }
+
+    .youtube-channel {
+        width: 100%;
+
+        justify-content: center;
+
+        padding: 13px 12px;
+
+        font-size: 7px;
+    }
+
+    .contact-radar {
+        width:
+            min(260px, 75vw);
+    }
+}
+
+
+/* =========================================================
+   13. MOBILE MODULE WINDOW
+========================================================= */
+
+@media (max-width: 760px) {
+
+    .module-overlay {
+        padding: 12px;
+    }
+
+    .module-window {
+        width: 100%;
+
+        min-height: 360px;
+
+        clip-path: polygon(
+            0 0,
+            calc(100% - 20px) 0,
+            100% 20px,
+            100% 100%,
+            20px 100%,
+            0 calc(100% - 20px)
+        );
+    }
+
+    .window-top {
+        padding:
+            15px 18px;
+
+        font-size: 7px;
+    }
+
+    .window-content {
+        min-height: 300px;
+
+        padding:
+            25px 18px;
+    }
+
+    .window-content h2 {
+        font-size:
+            clamp(24px, 8vw, 38px);
+    }
+
+    #moduleDescription {
+        font-size: 14px;
+    }
+
+    .window-loader {
+        width: 150px;
+    }
+}
+
+
+/* =========================================================
+   14. SMALL PHONES
+========================================================= */
+
+@media (max-width: 390px) {
+
+    .top-hud {
+        padding-left: 13px;
+        padding-right: 13px;
+    }
+
+    .system-id strong {
+        font-size: 9px;
+    }
+
+    .system-time span {
+        font-size: 9px;
+    }
+
+    .hero-section {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .hero-name {
+        font-size: 38px;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+    }
+
+    .primary-button,
+    .secondary-button {
+        width: 100%;
+    }
+
+    .interface-section {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .project-card {
+        min-height: 290px;
+    }
+
+    .hud-corner {
+        display: none;
+    }
+}
+
+
+/* =========================================================
+   15. TOUCH DEVICES
+========================================================= */
+
+@media (hover: none) and (pointer: coarse) {
+
+    .project-card:hover,
+    .skill-card:hover,
+    .profile-card:hover {
+        transform: none;
+    }
+
+    .project-card::before,
+    .project-card::after,
+    .skill-card::before,
+    .skill-card::after {
+        display: none;
+    }
+
+    .primary-button:hover,
+    .secondary-button:hover,
+    .youtube-channel:hover {
+        transform: none;
+    }
+
+    .nav-button:hover {
+        transform: none;
+    }
+}
+
+
+/* =========================================================
+   16. PERFORMANCE
+========================================================= */
+
+.project-card,
+.skill-card,
+.profile-card,
+.core,
+.primary-button,
+.secondary-button {
+    -webkit-tap-highlight-color: transparent;
+}
+
+
+/* =========================================================
+   17. SAFE OVERFLOW
+========================================================= */
+
+img,
+video,
+canvas,
+svg {
+    max-width: 100%;
+}
+
+table {
+    max-width: 100%;
+    overflow-x: auto;
+    display: block;
+}
+
+
+/* =========================================================
+   18. FINAL MOBILE MOTION SAFETY
+========================================================= */
+
+@media (max-width: 760px) {
+
+    .main-interface::after {
+        display: none;
+    }
+
+    .scanline {
+        opacity: 0.35;
+    }
+
+    .background-grid {
+        opacity: 0.25;
+    }
+
+}
+/* =========================================================
+   VS ACCESS VERIFICATION SYSTEM
+   ========================================================= */
+
+.access-screen {
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(0, 234, 255, 0.08),
+            transparent 45%
+        ),
+        #020609;
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    transition:
+        opacity 0.6s ease,
+        visibility 0.6s ease;
+}
+
+.access-screen.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.access-screen.unlocked {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   ACCESS BACKGROUND GRID
+   ========================================================= */
+
+.access-grid {
+    position: absolute;
+    inset: 0;
+
+    background-image:
+        linear-gradient(
+            rgba(0, 234, 255, 0.045) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(0, 234, 255, 0.045) 1px,
+            transparent 1px
+        );
+
+    background-size: 45px 45px;
+
+    mask-image:
+        radial-gradient(
+            circle at center,
+            black,
+            transparent 80%
+        );
+
+    -webkit-mask-image:
+        radial-gradient(
+            circle at center,
+            black,
+            transparent 80%
+        );
+
+    animation:
+        accessGridMove 12s linear infinite;
+}
+
+
+/* =========================================================
+   ACCESS PANEL
+   ========================================================= */
+
+.access-panel {
+    position: relative;
+    z-index: 2;
+
+    width: min(
+        620px,
+        calc(100% - 40px)
+    );
+
+    padding: 45px;
+
+    border: 1px solid
+        rgba(0, 234, 255, 0.25);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(4, 16, 21, 0.96),
+            rgba(2, 8, 12, 0.98)
+        );
+
+    box-shadow:
+        0 0 35px
+        rgba(0, 234, 255, 0.08),
+
+        inset 0 0 35px
+        rgba(0, 234, 255, 0.025);
+
+    text-align: center;
+
+    transform:
+        translateY(25px)
+        scale(0.97);
+
+    transition:
+        transform 0.7s ease 0.15s;
+
+    overflow: hidden;
+}
+
+
+/* TOP ENERGY LINE */
+
+.access-panel::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--cyan),
+            transparent
+        );
+
+    box-shadow:
+        0 0 12px
+        var(--cyan);
+
+    animation:
+        accessEnergyLine 3s linear infinite;
+}
+
+
+/* SIDE ENERGY LINE */
+
+.access-panel::after {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    right: 0;
+
+    width: 1px;
+    height: 100%;
+
+    background:
+        linear-gradient(
+            180deg,
+            transparent,
+            rgba(0, 234, 255, 0.6),
+            transparent
+        );
+
+    animation:
+        accessSideLine 4s linear infinite;
+}
+
+
+.access-screen.active .access-panel {
+    transform:
+        translateY(0)
+        scale(1);
+}
+
+
+/* =========================================================
+   ACCESS SYMBOL
+   ========================================================= */
+
+.access-symbol {
+    position: relative;
+
+    width: 75px;
+    height: 75px;
+
+    margin:
+        0 auto 25px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.access-ring {
+    position: absolute;
+    inset: 0;
+
+    border:
+        1px solid
+        rgba(0, 234, 255, 0.7);
+
+    border-radius: 50%;
+
+    animation:
+        accessSpin 5s linear infinite;
+
+    box-shadow:
+        0 0 15px
+        rgba(0, 234, 255, 0.15);
+}
+
+
+.access-ring::before,
+.access-ring::after {
+    content: "";
+
+    position: absolute;
+
+    background:
+        var(--cyan);
+}
+
+
+.access-ring::before {
+    width: 1px;
+    height: 120%;
+
+    left: 50%;
+    top: -10%;
+}
+
+
+.access-ring::after {
+    height: 1px;
+    width: 120%;
+
+    left: -10%;
+    top: 50%;
+}
+
+
+.access-core {
+    width: 25px;
+    height: 25px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            white,
+            var(--cyan) 35%,
+            transparent 72%
+        );
+
+    box-shadow:
+        0 0 15px var(--cyan),
+        0 0 35px var(--cyan);
+
+    animation:
+        accessPulse 1.5s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   ACCESS HEADER
+   ========================================================= */
+
+.access-label {
+    display: block;
+
+    color:
+        var(--cyan);
+
+    font-size: 10px;
+
+    letter-spacing: 4px;
+
+    margin-bottom: 12px;
+}
+
+
+.access-panel h2 {
+    margin: 0;
+
+    font-family:
+        var(--font-display);
+
+    font-size:
+        clamp(
+            25px,
+            5vw,
+            42px
+        );
+
+    letter-spacing: 4px;
+
+    line-height: 1.1;
+}
+
+
+.access-panel h2 strong {
+    color:
+        var(--cyan);
+
+    text-shadow:
+        0 0 15px
+        rgba(0, 234, 255, 0.35);
+}
+
+
+.access-panel > p {
+    margin:
+        15px 0 30px;
+
+    color:
+        var(--muted-light);
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+}
+
+
+/* =========================================================
+   ACCESS OPTIONS
+   ========================================================= */
+
+.access-options {
+    display: grid;
+
+    gap: 12px;
+}
+
+
+.access-option {
+    position: relative;
+
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+
+    gap: 18px;
+
+    padding:
+        18px 20px;
+
+    background:
+        rgba(
+            0,
+            234,
+            255,
+            0.025
+        );
+
+    border:
+        1px solid
+        rgba(
+            0,
+            234,
+            255,
+            0.16
+        );
+
+    color: white;
+
+    cursor: pointer;
+
+    text-align: left;
+
+    overflow: hidden;
+
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        background 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+/* OPTION SCAN EFFECT */
+
+.access-option::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: -100%;
+
+    width: 100%;
+    height: 100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(
+                0,
+                234,
+                255,
+                0.08
+            ),
+            transparent
+        );
+
+    transition:
+        left 0.5s ease;
+}
+
+
+.access-option:hover::before {
+    left: 100%;
+}
+
+
+.access-option:hover {
+    transform:
+        translateX(6px);
+
+    border-color:
+        rgba(
+            0,
+            234,
+            255,
+            0.65
+        );
+
+    background:
+        rgba(
+            0,
+            234,
+            255,
+            0.07
+        );
+
+    box-shadow:
+        0 0 20px
+        rgba(
+            0,
+            234,
+            255,
+            0.08
+        );
+}
+
+
+.access-option:active {
+    transform:
+        translateX(6px)
+        scale(0.98);
+}
+
+
+/* =========================================================
+   OPTION CONTENT
+   ========================================================= */
+
+.access-number {
+    position: relative;
+    z-index: 1;
+
+    color:
+        var(--cyan);
+
+    font-family:
+        var(--font-display);
+
+    font-size: 20px;
+
+    min-width: 28px;
+}
+
+
+.access-option-content {
+    position: relative;
+    z-index: 1;
+
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 5px;
+}
+
+
+.access-option-content small {
+    color:
+        #55747c;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+}
+
+
+.access-option-content strong {
+    font-size: 13px;
+
+    letter-spacing: 1.5px;
+}
+
+
+.access-arrow {
+    position: relative;
+    z-index: 1;
+
+    color:
+        var(--cyan);
+
+    font-size: 20px;
+
+    transition:
+        transform 0.25s ease;
+}
+
+
+.access-option:hover
+.access-arrow {
+    transform:
+        translateX(5px);
+}
+
+
+/* =========================================================
+   ADMIN VERIFICATION
+   ========================================================= */
+
+.admin-verification {
+    margin-top: 5px;
+}
+
+
+.admin-verification[hidden] {
+    display: none;
+}
+
+
+.admin-tag {
+    display: inline-block;
+
+    margin-bottom: 15px;
+
+    color:
+        var(--cyan);
+
+    font-size: 9px;
+
+    letter-spacing: 3px;
+}
+
+
+.admin-verification h3 {
+    margin:
+        0 0 12px;
+
+    font-family:
+        var(--font-display);
+
+    font-size: 24px;
+
+    letter-spacing: 2px;
+}
+
+
+.admin-verification p {
+    color:
+        var(--muted-light);
+
+    font-size: 12px;
+
+    margin-bottom: 22px;
+}
+
+
+/* =========================================================
+   ADMIN INPUT
+   ========================================================= */
+
+.admin-verification input {
+    box-sizing: border-box;
+
+    width: 100%;
+
+    padding:
+        15px 16px;
+
+    background:
+        rgba(
+            0,
+            234,
+            255,
+            0.025
+        );
+
+    border:
+        1px solid
+        rgba(
+            0,
+            234,
+            255,
+            0.2
+        );
+
+    outline: none;
+
+    color: white;
+
+    font-family:
+        inherit;
+
+    font-size: 12px;
+
+    letter-spacing: 2px;
+
+    text-align: center;
+
+    margin-bottom: 12px;
+
+    transition:
+        border-color 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease;
+}
+
+
+.admin-verification input::placeholder {
+    color:
+        #55747c;
+}
+
+
+.admin-verification input:focus {
+    border-color:
+        var(--cyan);
+
+    background:
+        rgba(
+            0,
+            234,
+            255,
+            0.045
+        );
+
+    box-shadow:
+        0 0 15px
+        rgba(
+            0,
+            234,
+            255,
+            0.1
+        );
+}
+
+
+/* =========================================================
+   VERIFY BUTTON
+   ========================================================= */
+
+.verify-button {
+    width: 100%;
+
+    padding: 15px;
+
+    border:
+        1px solid
+        var(--cyan);
+
+    background:
+        rgba(
+            0,
+            234,
+            255,
+            0.08
+        );
+
+    color:
+        var(--cyan);
+
+    font-family:
+        inherit;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    cursor: pointer;
+
+    transition:
+        0.25s ease;
+}
+
+
+.verify-button:hover {
+    background:
+        var(--cyan);
+
+    color:
+        #001216;
+
+    box-shadow:
+        0 0 25px
+        rgba(
+            0,
+            234,
+            255,
+            0.3
+        );
+}
+
+
+.verify-button:active {
+    transform:
+        scale(0.98);
+}
+
+
+/* =========================================================
+   BACK BUTTON
+   ========================================================= */
+
+.back-button {
+    margin-top: 15px;
+
+    border: none;
+
+    background:
+        transparent;
+
+    color:
+        #55747c;
+
+    cursor: pointer;
+
+    font-family:
+        inherit;
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+
+    transition:
+        color 0.25s ease;
+}
+
+
+.back-button:hover {
+    color:
+        var(--cyan);
+}
+
+
+/* =========================================================
+   ADMIN MESSAGE
+   ========================================================= */
+
+.admin-message {
+    min-height: 20px;
+
+    margin-top: 15px;
+
+    font-size: 10px;
+
+    letter-spacing: 1.5px;
+
+    transition:
+        opacity 0.25s ease;
+}
+
+
+.admin-message.error {
+    color:
+        #ff6577;
+
+    text-shadow:
+        0 0 10px
+        rgba(
+            255,
+            101,
+            119,
+            0.35
+        );
+}
+
+
+.admin-message.success {
+    color:
+        var(--cyan);
+
+    text-shadow:
+        0 0 10px
+        rgba(
+            0,
+            234,
+            255,
+            0.35
+        );
+}
+
+
+/* =========================================================
+   ACCESS ANIMATIONS
+   ========================================================= */
+
+@keyframes accessSpin {
+
+    from {
+        transform:
+            rotate(0deg);
+    }
+
+    to {
+        transform:
+            rotate(360deg);
+    }
+
+}
+
+
+@keyframes accessPulse {
+
+    0%,
+    100% {
+        transform:
+            scale(0.85);
+
+        opacity:
+            0.7;
+    }
+
+    50% {
+        transform:
+            scale(1.15);
+
+        opacity:
+            1;
+    }
+
+}
+
+
+@keyframes accessGridMove {
+
+    from {
+        transform:
+            translateY(0);
+    }
+
+    to {
+        transform:
+            translateY(45px);
+    }
+
+}
+
+
+@keyframes accessEnergyLine {
+
+    0% {
+        transform:
+            translateX(-100%);
+    }
+
+    100% {
+        transform:
+            translateX(100%);
+    }
+
+}
+
+
+@keyframes accessSideLine {
+
+    0% {
+        transform:
+            translateY(-100%);
+    }
+
+    100% {
+        transform:
+            translateY(100%);
+    }
+
+}
+
+
+/* =========================================================
+   ADMIN ERROR ANIMATION
+   ========================================================= */
+
+.admin-message.error {
+    animation:
+        accessError 0.35s ease;
+}
+
+
+@keyframes accessError {
+
+    0%,
+    100% {
+        transform:
+            translateX(0);
+    }
+
+    25% {
+        transform:
+            translateX(-5px);
+    }
+
+    75% {
+        transform:
+            translateX(5px);
+    }
+
+}
+
+
+/* =========================================================
+   ACCESS SCREEN MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    .access-panel {
+
+        width:
+            calc(100% - 30px);
+
+        padding:
+            30px 20px;
+
+    }
+
+
+    .access-symbol {
+
+        width: 65px;
+        height: 65px;
+
+        margin-bottom: 20px;
+
+    }
+
+
+    .access-core {
+
+        width: 21px;
+        height: 21px;
+
+    }
+
+
+    .access-label {
+
+        font-size: 8px;
+
+        letter-spacing: 3px;
+
+    }
+
+
+    .access-panel h2 {
+
+        font-size:
+            clamp(
+                23px,
+                8vw,
+                34px
+            );
+
+        letter-spacing: 2px;
+
+    }
+
+
+    .access-panel > p {
+
+        font-size: 9px;
+
+        letter-spacing: 1.5px;
+
+        margin-bottom: 24px;
+
+    }
+
+
+    .access-option {
+
+        padding:
+            16px;
+
+        gap: 12px;
+
+    }
+
+
+    .access-number {
+
+        font-size: 17px;
+
+    }
+
+
+    .access-option-content strong {
+
+        font-size: 10px;
+
+        letter-spacing: 1px;
+
+    }
+
+
+    .access-option-content small {
+
+        font-size: 8px;
+
+    }
+
+
+    .access-arrow {
+
+        font-size: 17px;
+
+    }
+
+
+    .admin-verification h3 {
+
+        font-size: 20px;
+
+    }
+
+
+    .admin-verification p {
+
+        font-size: 10px;
+
+    }
+
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 390px) {
+
+    .access-panel {
+
+        padding:
+            25px 15px;
+
+    }
+
+
+    .access-option {
+
+        padding:
+            14px 12px;
+
+    }
+
+
+    .access-option-content strong {
+
+        font-size: 9px;
+
+    }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .access-grid,
+    .access-ring,
+    .access-core,
+    .access-panel::before,
+    .access-panel::after {
+
+        animation:
+            none !important;
+
+    }
+
+    .access-option {
+
+        transition:
+            none;
+
+    }
+
+}
+/* =========================================================
+   VS WEB-LINK // SUBTLE SPIDER-TECH EASTER EGG
+   ========================================================= */
+
+.access-screen::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.16;
+
+    background:
+        radial-gradient(
+            circle at center,
+            transparent 0 18%,
+            rgba(0, 234, 255, 0.08) 18.2%,
+            transparent 18.7% 32%,
+            rgba(0, 234, 255, 0.055) 32.2%,
+            transparent 32.7% 47%,
+            rgba(0, 234, 255, 0.04) 47.2%,
+            transparent 47.7%
+        ),
+        repeating-conic-gradient(
+            from 0deg at center,
+            rgba(0, 234, 255, 0.06) 0deg 1deg,
+            transparent 1deg 30deg
+        );
+
+    mask-image:
+        radial-gradient(
+            circle at center,
+            black 0%,
+            transparent 72%
+        );
+
+    animation: webLinkPulse 5s ease-in-out infinite;
+}
+
+
+/* Tiny web-tech status */
+
+.access-panel::after {
+    content: "WEB-LINK // ONLINE";
+    position: absolute;
+
+    right: 18px;
+    bottom: 14px;
+
+    font-family: var(--font-display);
+    font-size: 0.55rem;
+    letter-spacing: 0.18em;
+
+    color: rgba(0, 234, 255, 0.48);
+
+    pointer-events: none;
+}
+
+
+/* Original geometric spider-tech mark */
+
+.access-symbol::after {
+    content: "";
+    position: absolute;
+
+    width: 30px;
+    height: 30px;
+
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%) rotate(45deg);
+
+    border: 1px solid rgba(0, 234, 255, 0.35);
+
+    clip-path: polygon(
+        50% 0%,
+        61% 34%,
+        100% 50%,
+        61% 66%,
+        50% 100%,
+        39% 66%,
+        0% 50%,
+        39% 34%
+    );
+
+    opacity: 0.65;
+
+    animation:
+        webMarkPulse 2.8s ease-in-out infinite;
+}
+
+
+/* Subtle energy-web around the VS core */
+
+.core::before {
+    content: "";
+
+    position: absolute;
+    inset: -18%;
+
+    border: 1px solid rgba(0, 234, 255, 0.13);
+
+    clip-path: polygon(
+        50% 0%,
+        65% 22%,
+        88% 12%,
+        78% 38%,
+        100% 50%,
+        78% 62%,
+        88% 88%,
+        65% 78%,
+        50% 100%,
+        35% 78%,
+        12% 88%,
+        22% 62%,
+        0% 50%,
+        22% 38%,
+        12% 12%,
+        35% 22%
+    );
+
+    pointer-events: none;
+
+    animation:
+        webCoreRotate 14s linear infinite;
+}
+
+
+/* Web-tech micro flicker */
+
+@keyframes webLinkPulse {
+
+    0%,
+    100% {
+        opacity: 0.08;
+    }
+
+    50% {
+        opacity: 0.18;
+    }
+
+}
+
+
+@keyframes webMarkPulse {
+
+    0%,
+    100% {
+        opacity: 0.28;
+        transform:
+            translate(-50%, -50%)
+            rotate(45deg)
+            scale(0.88);
+    }
+
+    50% {
+        opacity: 0.72;
+        transform:
+            translate(-50%, -50%)
+            rotate(45deg)
+            scale(1);
+    }
+
+}
+
+
+@keyframes webCoreRotate {
+
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+
+/* Mobile safety */
+
+@media (max-width: 600px) {
+
+    .access-panel::after {
+        right: 12px;
+        bottom: 10px;
+        font-size: 0.48rem;
+    }
+
+    .access-screen::before {
+        opacity: 0.11;
+    }
+
+    .core::before {
+        inset: -12%;
+    }
+
+}
+
+
+/* Reduced motion */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .access-screen::before,
+    .access-symbol::after,
+    .core::before {
+        animation: none;
+    }
+
+}
+/* =========================================================
+   VS WEB-LINK // VISIBLE EASTER EGG
+   ========================================================= */
+
+.access-screen {
+    overflow: hidden;
+}
+
+/* Central futuristic web pattern */
+.access-screen::before {
+    content: "";
+    position: absolute;
+    width: 620px;
+    height: 620px;
+
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    background:
+        repeating-radial-gradient(
+            circle at center,
+            transparent 0 48px,
+            rgba(0, 234, 255, 0.16) 49px,
+            transparent 51px
+        );
+
+    opacity: 0.45;
+
+    pointer-events: none;
+
+    z-index: 1;
+
+    animation: vsWebPulse 5s ease-in-out infinite;
+}
+
+
+/* Radial web connections */
+.access-screen::after {
+    content: "";
+
+    position: absolute;
+    width: 620px;
+    height: 620px;
+
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    background:
+        repeating-conic-gradient(
+            from 0deg,
+            rgba(0, 234, 255, 0.12) 0deg 1deg,
+            transparent 1deg 30deg
+        );
+
+    opacity: 0.35;
+
+    pointer-events: none;
+
+    z-index: 1;
+
+    mask-image:
+        radial-gradient(
+            circle,
+            black 0%,
+            transparent 70%
+        );
+}
+
+
+/* Keep panel above the web effect */
+.access-panel {
+    position: relative;
+    z-index: 5;
+}
+
+
+/* Small WEB-LINK HUD indicator */
+.access-panel::after {
+    content: "WEB-LINK // ONLINE";
+
+    position: absolute;
+
+    right: 18px;
+    bottom: 14px;
+
+    font-family: var(--font-display);
+
+    font-size: 0.55rem;
+
+    letter-spacing: 0.18em;
+
+    color: var(--cyan);
+
+    opacity: 0.75;
+
+    text-shadow:
+        0 0 8px rgba(0, 234, 255, 0.55);
+
+    pointer-events: none;
+}
+
+
+/* Original geometric spider-tech symbol */
+.access-symbol {
+    position: relative;
+}
+
+
+.access-symbol::after {
+    content: "";
+
+    position: absolute;
+
+    width: 34px;
+    height: 34px;
+
+    left: 50%;
+    top: 50%;
+
+    transform:
+        translate(-50%, -50%)
+        rotate(45deg);
+
+    border: 1px solid var(--cyan);
+
+    opacity: 0.65;
+
+    clip-path: polygon(
+        50% 0%,
+        62% 32%,
+        100% 50%,
+        62% 68%,
+        50% 100%,
+        38% 68%,
+        0% 50%,
+        38% 32%
+    );
+
+    filter:
+        drop-shadow(
+            0 0 5px rgba(0, 234, 255, 0.65)
+        );
+
+    pointer-events: none;
+
+    animation:
+        vsSpiderMark 3s ease-in-out infinite;
+}
+
+
+/* Core web-energy */
+.core {
+    position: relative;
+}
+
+
+.core::before {
+    content: "";
+
+    position: absolute;
+
+    inset: -25%;
+
+    border: 1px solid rgba(0, 234, 255, 0.25);
+
+    border-radius: 50%;
+
+    background:
+        repeating-radial-gradient(
+            circle,
+            transparent 0 16px,
+            rgba(0, 234, 255, 0.08) 17px,
+            transparent 18px
+        );
+
+    pointer-events: none;
+
+    animation:
+        vsCoreWeb 12s linear infinite;
+}
+
+
+/* =========================================================
+   WEB ANIMATIONS
+   ========================================================= */
+
+@keyframes vsWebPulse {
+
+    0%,
+    100% {
+        opacity: 0.25;
+        transform:
+            translate(-50%, -50%)
+            scale(0.96);
+    }
+
+    50% {
+        opacity: 0.5;
+        transform:
+            translate(-50%, -50%)
+            scale(1);
+    }
+
+}
+
+
+@keyframes vsSpiderMark {
+
+    0%,
+    100% {
+        opacity: 0.35;
+        transform:
+            translate(-50%, -50%)
+            rotate(45deg)
+            scale(0.85);
+    }
+
+    50% {
+        opacity: 0.8;
+        transform:
+            translate(-50%, -50%)
+            rotate(45deg)
+            scale(1.05);
+    }
+
+}
+
+
+@keyframes vsCoreWeb {
+
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    .access-screen::before,
+    .access-screen::after {
+        width: 420px;
+        height: 420px;
+    }
+
+    .access-panel::after {
+        font-size: 0.45rem;
+        right: 10px;
+        bottom: 9px;
+    }
+
+}
+
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+
+    .access-screen::before,
+    .access-screen::after,
+    .access-symbol::after,
+    .core::before {
+        animation: none;
+    }
+
+}
+/* =========================================================
+   VS-01 // WEB-LINK CORE EASTER EGG
+   ========================================================= */
+
+.core {
+    position: relative;
+    overflow: visible;
+}
+
+/* Geometric web network around the energy core */
+.core::after {
+    content: "";
+
+    position: absolute;
+
+    width: 145%;
+    height: 145%;
+
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    background:
+        /* horizontal / diagonal web connections */
+        repeating-conic-gradient(
+            from 0deg,
+            transparent 0deg 14deg,
+            rgba(0, 234, 255, 0.16) 14.4deg 14.9deg,
+            transparent 15.3deg 44deg
+        ),
+
+        /* circular web rings */
+        repeating-radial-gradient(
+            circle at center,
+            transparent 0 17px,
+            rgba(0, 234, 255, 0.10) 17.5px 18px,
+            transparent 18.5px 29px
+        );
+
+    opacity: 0.55;
+
+    pointer-events: none;
+
+    z-index: -1;
+
+    animation:
+        vsWebNetworkRotate 18s linear infinite,
+        vsWebNetworkPulse 4s ease-in-out infinite;
+}
+
+
+/* Tiny WEB-LINK status under the core */
+.core-container::after {
+    content: "WEB-LINK // ONLINE";
+
+    position: absolute;
+
+    left: 50%;
+    bottom: -34px;
+
+    transform: translateX(-50%);
+
+    white-space: nowrap;
+
+    font-family: var(--font-display);
+
+    font-size: 0.48rem;
+
+    letter-spacing: 0.22em;
+
+    color: rgba(0, 234, 255, 0.58);
+
+    text-shadow:
+        0 0 7px rgba(0, 234, 255, 0.45);
+
+    pointer-events: none;
+
+    opacity: 0.7;
+
+    animation:
+        webStatusPulse 3s ease-in-out infinite;
+}
+
+
+/* Small geometric spider-tech points */
+.core-container::before {
+    content: "✦";
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+
+    color: rgba(0, 234, 255, 0.35);
+
+    font-size: 3.5rem;
+
+    pointer-events: none;
+
+    z-index: 2;
+
+    opacity: 0.35;
+
+    animation:
+        webSymbolPulse 3.5s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   WEB ANIMATIONS
+   ========================================================= */
+
+@keyframes vsWebNetworkRotate {
+
+    from {
+        transform:
+            translate(-50%, -50%)
+            rotate(0deg);
+    }
+
+    to {
+        transform:
+            translate(-50%, -50%)
+            rotate(360deg);
+    }
+
+}
+
+
+@keyframes vsWebNetworkPulse {
+
+    0%,
+    100% {
+        opacity: 0.25;
+        scale: 0.96;
+    }
+
+    50% {
+        opacity: 0.58;
+        scale: 1;
+    }
+
+}
+
+
+@keyframes webStatusPulse {
+
+    0%,
+    100% {
+        opacity: 0.35;
+    }
+
+    50% {
+        opacity: 0.85;
+    }
+
+}
+
+
+@keyframes webSymbolPulse {
+
+    0%,
+    100% {
+        opacity: 0.18;
+        transform:
+            translate(-50%, -50%)
+            scale(0.8);
+    }
+
+    50% {
+        opacity: 0.45;
+        transform:
+            translate(-50%, -50%)
+            scale(1);
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 760px) {
+
+    .core::after {
+        width: 135%;
+        height: 135%;
+        opacity: 0.4;
+    }
+
+    .core-container::after {
+        bottom: -27px;
+        font-size: 0.42rem;
+    }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .core::after,
+    .core-container::before,
+    .core-container::after {
+        animation: none;
+    }
+
+}
+/* =========================================================
+   I10 // ORIGINAL HERO FLIGHT SYSTEM
+========================================================= */
+
+#i10Hero {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 4;
+    perspective: 1200px;
+
+    --i10-x: 0px;
+    --i10-y: 0px;
+    --i10-rx: 0deg;
+    --i10-ry: 0deg;
+}
+
+.i10-flight {
+    position: absolute;
+    left: -340px;
+    top: 12%;
+    width: 330px;
+    height: 250px;
+
+    transform:
+        translate3d(
+            var(--i10-x),
+            var(--i10-y),
+            0
+        )
+        rotateX(var(--i10-rx))
+        rotateY(var(--i10-ry));
+
+    transform-style: preserve-3d;
+
+    animation:
+        i10FlyAcross 10s cubic-bezier(.42,0,.58,1) infinite,
+        i10Hover 3s ease-in-out infinite;
+
+    filter:
+        drop-shadow(0 0 12px rgba(0,234,255,.45))
+        drop-shadow(0 0 35px rgba(0,234,255,.16));
+}
+
+/* ---------- HERO BODY ---------- */
+
+.i10-body {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+
+    width: 145px;
+    height: 190px;
+
+    transform:
+        translate(-50%, -50%)
+        rotate(-7deg);
+
+    transform-style: preserve-3d;
+}
+
+/* helmet */
+
+.i10-head {
+    position: absolute;
+
+    left: 45px;
+    top: 0;
+
+    width: 65px;
+    height: 70px;
+
+    border-radius: 45% 45% 40% 40%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #17252c,
+            #03080b 48%,
+            #1a3038
+        );
+
+    border: 2px solid rgba(0,234,255,.75);
+
+    box-shadow:
+        inset 0 0 18px rgba(0,234,255,.12),
+        0 0 18px rgba(0,234,255,.3);
+
+    transform: translateZ(30px);
+}
+
+/* helmet visor */
+
+.i10-visor {
+    position: absolute;
+
+    left: 10px;
+    right: 10px;
+    top: 25px;
+
+    height: 10px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            #00eaff,
+            #bafaff,
+            #00eaff,
+            transparent
+        );
+
+    box-shadow:
+        0 0 8px #00eaff,
+        0 0 20px rgba(0,234,255,.7);
+
+    transform: skewX(-10deg);
+}
+
+/* neck */
+
+.i10-neck {
+    position: absolute;
+
+    left: 61px;
+    top: 65px;
+
+    width: 34px;
+    height: 24px;
+
+    background: #071014;
+
+    border-left: 2px solid rgba(0,234,255,.5);
+    border-right: 2px solid rgba(0,234,255,.5);
+}
+
+/* chest armor */
+
+.i10-chest {
+    position: absolute;
+
+    left: 27px;
+    top: 78px;
+
+    width: 100px;
+    height: 85px;
+
+    clip-path: polygon(
+        16% 0,
+        84% 0,
+        100% 28%,
+        87% 100%,
+        13% 100%,
+        0 28%
+    );
+
+    background:
+        linear-gradient(
+            145deg,
+            #17282f,
+            #03090c 52%,
+            #13272e
+        );
+
+    border: 2px solid rgba(0,234,255,.55);
+
+    box-shadow:
+        inset 0 0 25px rgba(0,234,255,.08),
+        0 0 18px rgba(0,234,255,.18);
+
+    transform: translateZ(20px);
+}
+
+/* I10 chest core */
+
+.i10-core {
+    position: absolute;
+
+    left: 50%;
+    top: 38%;
+
+    width: 27px;
+    height: 27px;
+
+    transform: translate(-50%, -50%);
+
+    clip-path: polygon(
+        50% 0,
+        100% 30%,
+        82% 100%,
+        18% 100%,
+        0 30%
+    );
+
+    background: #00eaff;
+
+    box-shadow:
+        0 0 8px #00eaff,
+        0 0 25px #00eaff,
+        0 0 50px rgba(0,234,255,.65);
+
+    animation: i10CorePulse 1.8s ease-in-out infinite;
+}
+
+/* arms */
+
+.i10-arm {
+    position: absolute;
+
+    width: 85px;
+    height: 27px;
+
+    top: 92px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #14252b,
+            #04090c,
+            #172c34
+        );
+
+    border: 1px solid rgba(0,234,255,.5);
+
+    border-radius: 20px;
+}
+
+.i10-arm.left {
+    left: -48px;
+    transform:
+        rotate(-20deg)
+        translateZ(10px);
+}
+
+.i10-arm.right {
+    right: -48px;
+    transform:
+        rotate(18deg)
+        translateZ(10px);
+}
+
+/* hands */
+
+.i10-hand {
+    position: absolute;
+
+    width: 24px;
+    height: 24px;
+
+    top: 88px;
+
+    border: 2px solid rgba(0,234,255,.6);
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 10px rgba(0,234,255,.3);
+}
+
+.i10-hand.left {
+    left: -78px;
+}
+
+.i10-hand.right {
+    right: -78px;
+}
+
+/* legs */
+
+.i10-leg {
+    position: absolute;
+
+    top: 150px;
+
+    width: 34px;
+    height: 90px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #162930,
+            #03080b
+        );
+
+    border: 1px solid rgba(0,234,255,.45);
+
+    border-radius: 15px;
+}
+
+.i10-leg.left {
+    left: 39px;
+    transform: rotate(14deg);
+}
+
+.i10-leg.right {
+    right: 39px;
+    transform: rotate(-14deg);
+}
+
+/* ---------- ENERGY TRAILS ---------- */
+
+.i10-energy {
+    position: absolute;
+
+    width: 360px;
+    height: 3px;
+
+    left: -80px;
+    top: 115px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(0,234,255,.1),
+            #00eaff,
+            rgba(0,234,255,.2),
+            transparent
+        );
+
+    box-shadow:
+        0 0 8px #00eaff,
+        0 0 20px rgba(0,234,255,.4);
+
+    transform: rotate(-7deg);
+
+    animation: i10EnergyFlow 1.2s linear infinite;
+}
+
+.i10-energy.two {
+    top: 145px;
+    transform: rotate(8deg);
+    opacity: .45;
+    animation-delay: -.5s;
+}
+
+.i10-energy.three {
+    top: 75px;
+    transform: rotate(-14deg);
+    opacity: .25;
+    animation-delay: -.8s;
+}
+
+/* ---------- LABEL ---------- */
+
+.i10-label {
+    position: absolute;
+
+    left: 50%;
+    top: 245px;
+
+    transform: translateX(-50%);
+
+    font-family: var(--font-display);
+
+    font-size: 9px;
+    letter-spacing: .35em;
+
+    color: rgba(0,234,255,.75);
+
+    white-space: nowrap;
+
+    text-shadow:
+        0 0 8px rgba(0,234,255,.65);
+}
+
+/* ---------- ANIMATIONS ---------- */
+
+@keyframes i10FlyAcross {
+
+    0% {
+        left: -360px;
+        top: 8%;
+        opacity: 0;
+        transform:
+            translate3d(var(--i10-x),var(--i10-y),0)
+            rotate(-10deg)
+            scale(.65);
+    }
+
+    8% {
+        opacity: 1;
+    }
+
+    48% {
+        top: 26%;
+        transform:
+            translate3d(var(--i10-x),var(--i10-y),0)
+            rotate(4deg)
+            scale(1);
+    }
+
+    75% {
+        top: 12%;
+        transform:
+            translate3d(var(--i10-x),var(--i10-y),0)
+            rotate(-3deg)
+            scale(.92);
+    }
+
+    100% {
+        left: calc(100% + 360px);
+        top: 30%;
+        opacity: 0;
+        transform:
+            translate3d(var(--i10-x),var(--i10-y),0)
+            rotate(9deg)
+            scale(.72);
+    }
+}
+
+@keyframes i10Hover {
+
+    0%,100% {
+        margin-top: 0;
+    }
+
+    50% {
+        margin-top: -12px;
+    }
+}
+
+@keyframes i10CorePulse {
+
+    0%,100% {
+        transform: translate(-50%,-50%) scale(.85);
+        opacity: .75;
+    }
+
+    50% {
+        transform: translate(-50%,-50%) scale(1.15);
+        opacity: 1;
+    }
+}
+
+@keyframes i10EnergyFlow {
+
+    from {
+        opacity: .15;
+        transform: translateX(-30px) rotate(-7deg);
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    to {
+        opacity: .1;
+        transform: translateX(40px) rotate(-7deg);
+    }
+}
+
+/* ---------- MOBILE ---------- */
+
+@media (max-width:760px) {
+
+    #i10Hero {
+        opacity: .55;
+    }
+
+    .i10-flight {
+        width: 230px;
+        height: 190px;
+    }
+
+    .i10-body {
+        transform:
+            translate(-50%, -50%)
+            scale(.72)
+            rotate(-7deg);
+    }
+
+    .i10-label {
+        top: 205px;
+        font-size: 7px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .i10-flight,
+    .i10-energy,
+    .i10-core {
+        animation: none !important;
+    }
+}
+/* =========================================================
+   I10 // IDLE HERO MODE
+========================================================= */
+
+.i10-flight {
+    left: auto !important;
+    right: 8% !important;
+    top: 7% !important;
+
+    opacity: 1 !important;
+
+    animation:
+        i10IdleFloat 4s ease-in-out infinite !important;
+
+    transition:
+        transform .18s ease-out;
+}
+
+/* I10 floating gently while idle */
+
+@keyframes i10IdleFloat {
+
+    0%, 100% {
+        margin-top: 0;
+    }
+
+    50% {
+        margin-top: -8px;
+    }
+}
+
+/* Hero name */
+
+.i10-label {
+    top: 245px !important;
+
+    font-size: 10px !important;
+    letter-spacing: .28em !important;
+
+    color: #00eaff !important;
+
+    text-shadow:
+        0 0 8px rgba(0,234,255,.8),
+        0 0 22px rgba(0,234,255,.35);
+
+    animation:
+        i10NamePulse 2.8s ease-in-out infinite;
+}
+
+@keyframes i10NamePulse {
+
+    0%, 100% {
+        opacity: .65;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+/* Small energy field behind I10 */
+
+.i10-flight::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 280px;
+    height: 280px;
+
+    transform: translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(0,234,255,.12),
+            transparent 65%
+        );
+
+    pointer-events: none;
+
+    animation:
+        i10Aura 3s ease-in-out infinite;
+}
+
+@keyframes i10Aura {
+
+    0%, 100% {
+        opacity: .35;
+        transform:
+            translate(-50%, -50%)
+            scale(.9);
+    }
+
+    50% {
+        opacity: .75;
+        transform:
+            translate(-50%, -50%)
+            scale(1.08);
+    }
+}
+
+/* Mobile */
+
+@media (max-width:760px) {
+
+    .i10-flight {
+        right: 3% !important;
+        top: 5% !important;
+    }
+
+    .i10-label {
+        top: 205px !important;
+    }
+}
+/* =========================================================
+   I10 // CURSOR REACTION SYSTEM
+========================================================= */
+
+.i10-flight {
+    --i10-tilt-x: 0deg;
+    --i10-tilt-y: 0deg;
+    --i10-react-x: 0px;
+    --i10-react-y: 0px;
+}
+
+.i10-body {
+    transform:
+        translate3d(
+            var(--i10-react-x),
+            var(--i10-react-y),
+            0
+        )
+        rotateX(var(--i10-tilt-x))
+        rotateY(var(--i10-tilt-y))
+        rotate(-7deg);
+
+    transition:
+        transform .12s ease-out;
+}
+
+/* Cursor targeting ring */
+
+.i10-target-ring {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 245px;
+    height: 245px;
+
+    transform: translate(-50%, -50%);
+
+    border: 1px solid rgba(0,234,255,.25);
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 20px rgba(0,234,255,.08),
+        inset 0 0 25px rgba(0,234,255,.04);
+
+    opacity: .45;
+
+    pointer-events: none;
+
+    animation:
+        i10TargetRotate 12s linear infinite;
+}
+
+.i10-target-ring::before,
+.i10-target-ring::after {
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+
+    border: 1px solid rgba(0,234,255,.16);
+    border-radius: 50%;
+}
+
+.i10-target-ring::before {
+    width: 185px;
+    height: 185px;
+}
+
+.i10-target-ring::after {
+    width: 125px;
+    height: 125px;
+}
+
+@keyframes i10TargetRotate {
+
+    from {
+        transform:
+            translate(-50%, -50%)
+            rotate(0deg);
+    }
+
+    to {
+        transform:
+            translate(-50%, -50%)
+            rotate(360deg);
+    }
+}
+
+/* Energy reacts when cursor moves */
+
+.i10-flight.i10-reacting .i10-energy {
+    opacity: 1;
+
+    filter:
+        brightness(1.5)
+        drop-shadow(0 0 8px #00eaff);
+
+    transform-origin: left center;
+}
+
+.i10-flight.i10-reacting .i10-core {
+    box-shadow:
+        0 0 12px #00eaff,
+        0 0 32px #00eaff,
+        0 0 65px rgba(0,234,255,.85);
+}
+
+/* Cursor stopped */
+
+.i10-flight.i10-idle .i10-target-ring {
+    opacity: .28;
+}
+
+/* Mobile */
+
+@media (max-width:760px) {
+
+    .i10-target-ring {
+        width: 190px;
+        height: 190px;
+    }
+
+    .i10-target-ring::before {
+        width: 145px;
+        height: 145px;
+    }
+
+    .i10-target-ring::after {
+        width: 95px;
+        height: 95px;
+    }
+
+}

@@ -1,47 +1,196 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+    <!-- =====================================================
+         BASIC META
+    ====================================================== -->
+
     <meta charset="UTF-8">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>VAIBHAV SHUKLA | SYSTEM INTERFACE</title>
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
     <meta
         name="description"
-        content="Vaibhav Shukla — Content Creator, Web Developer, Video Editor and Canva Designer."
+        content="Vaibhav Shukla — Class 11 student, content creator and web developer exploring Python, Flask, HTML, CSS, JavaScript, Canva and video editing."
     >
 
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <meta
+        name="keywords"
+        content="Vaibhav Shukla, content creator, web developer, Python, Flask, HTML, CSS, JavaScript, Canva, video editing, portfolio"
+    >
+
+    <meta
+        name="author"
+        content="Vaibhav Shukla"
+    >
+
+    <meta
+        name="robots"
+        content="index, follow"
+    >
+
+    <meta
+        name="theme-color"
+        content="#05080d"
+    >
+
+    <meta
+        name="application-name"
+        content="Vaibhav Shukla Portfolio"
+    >
+
+
+    <!-- =====================================================
+         PAGE TITLE
+    ====================================================== -->
+
+    <title>
+        Vaibhav Shukla | Content Creator & Web Developer
+    </title>
+
+
+    <!-- =====================================================
+         FAVICON
+    ====================================================== -->
+
+    <link
+        rel="icon"
+        type="image/png"
+        href="{{ url_for('static', filename='images/favicon.png') }}"
+    >
+
+
+    <!-- =====================================================
+         OPEN GRAPH — SOCIAL SHARING
+    ====================================================== -->
+
+    <meta
+        property="og:type"
+        content="website"
+    >
+
+    <meta
+        property="og:title"
+        content="Vaibhav Shukla | Content Creator & Web Developer"
+    >
+
+    <meta
+        property="og:description"
+        content="Explore Vaibhav Shukla's digital projects, creative work, web development journey and content creation."
+    >
+
+    <meta
+        property="og:url"
+        content="https://vaibhav-portfolio-15q3.onrender.com/"
+    >
+
+    <meta
+        property="og:site_name"
+        content="Vaibhav Shukla Portfolio"
+    >
+
+    <!-- SOCIAL PREVIEW IMAGE -->
+
+    <meta
+        property="og:image"
+        content="{{ url_for('static', filename='images/social-preview.png', _external=True) }}"
+    >
+
+    <meta
+        property="og:image:alt"
+        content="Vaibhav Shukla Portfolio — Content Creator and Web Developer"
+    >
+
+
+    <!-- =====================================================
+         TWITTER / X
+    ====================================================== -->
+
+    <meta
+        name="twitter:card"
+        content="summary_large_image"
+    >
+
+    <meta
+        name="twitter:title"
+        content="Vaibhav Shukla | Content Creator & Web Developer"
+    >
+
+    <meta
+        name="twitter:description"
+        content="Portfolio of Vaibhav Shukla — content creation, web development, Canva and video editing."
+    >
+
+    <meta
+        name="twitter:image"
+        content="{{ url_for('static', filename='images/social-preview.png', _external=True) }}"
+    >
+
+    <meta
+        name="twitter:image:alt"
+        content="Vaibhav Shukla Portfolio — Content Creator and Web Developer"
+    >
+
+
+    <!-- =====================================================
+         STYLESHEET
+    ====================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/style.css') }}"
+    >
+
 </head>
+
 
 <body>
 
-    <!-- =========================
+    <!-- =====================================================
          SYSTEM BOOT SCREEN
-    ========================== -->
+    ====================================================== -->
 
-    <div id="bootScreen" class="boot-screen">
+    <div
+        id="bootScreen"
+        class="boot-screen"
+    >
 
         <div class="boot-grid"></div>
 
         <div class="boot-content">
 
             <div class="boot-symbol">
+
                 <div class="boot-ring"></div>
+
                 <div class="boot-core"></div>
+
             </div>
 
-            <p class="boot-label">PERSONAL INTERFACE</p>
+            <p class="boot-label">
+                PERSONAL INTERFACE
+            </p>
 
-            <h1>VAIBHAV SYSTEM</h1>
+            <h1>
+                VAIBHAV SYSTEM
+            </h1>
 
             <div class="boot-status">
-                <span id="bootText">INITIALIZING SYSTEM...</span>
+
+                <span id="bootText">
+                    INITIALIZING SYSTEM...
+                </span>
+
             </div>
 
             <div class="boot-progress">
+
                 <div id="bootProgress"></div>
+
             </div>
 
             <p class="boot-version">
@@ -53,32 +202,206 @@
     </div>
 
 
-    <!-- =========================
+    <!-- =====================================================
+         VS ACCESS VERIFICATION
+         Appears after boot animation is completed.
+    ====================================================== -->
+
+    <div
+        id="accessScreen"
+        class="access-screen"
+    >
+
+        <div class="access-grid"></div>
+
+        <div class="access-panel">
+
+
+            <!-- ACCESS SYMBOL -->
+
+            <div class="access-symbol">
+
+                <div class="access-ring"></div>
+
+                <div class="access-core"></div>
+
+            </div>
+
+
+            <!-- ACCESS HEADER -->
+
+            <span class="access-label">
+                VS-01 // ACCESS CONTROL
+            </span>
+
+            <h2>
+                ACCESS <strong>VERIFICATION</strong>
+            </h2>
+
+            <p id="accessVoiceStatus">
+                SYSTEM INITIALIZED
+            </p>
+
+
+            <!-- VISITOR / ADMIN OPTIONS -->
+
+            <div
+                class="access-options"
+                id="accessOptions"
+            >
+
+                <button
+                    class="access-option"
+                    id="visitorAccess"
+                    type="button"
+                >
+
+                    <span class="access-number">
+                        01
+                    </span>
+
+                    <span class="access-option-content">
+
+                        <small>
+                            IDENTITY
+                        </small>
+
+                        <strong>
+                            YOU ARE A VISITOR
+                        </strong>
+
+                    </span>
+
+                    <span class="access-arrow">
+                        →
+                    </span>
+
+                </button>
+
+
+                <button
+                    class="access-option"
+                    id="adminAccess"
+                    type="button"
+                >
+
+                    <span class="access-number">
+                        02
+                    </span>
+
+                    <span class="access-option-content">
+
+                        <small>
+                            IDENTITY
+                        </small>
+
+                        <strong>
+                            YOU ARE ADMIN
+                        </strong>
+
+                    </span>
+
+                    <span class="access-arrow">
+                        →
+                    </span>
+
+                </button>
+
+            </div>
+
+
+            <!-- =================================================
+                 ADMIN VERIFICATION
+            ================================================== -->
+
+            <div
+                class="admin-verification"
+                id="adminVerification"
+                hidden
+            >
+
+                <span class="admin-tag">
+                    ADMIN CHANNEL
+                </span>
+
+                <h3>
+                    CREATOR VERIFICATION
+                </h3>
+
+                <p>
+                    What is the system creator code name?
+                </p>
+
+                <input
+                    type="text"
+                    id="adminCodeInput"
+                    placeholder="ENTER CODE NAME"
+                    autocomplete="off"
+                    spellcheck="false"
+                >
+
+                <button
+                    id="verifyAdmin"
+                    class="verify-button"
+                    type="button"
+                >
+                    VERIFY ACCESS →
+                </button>
+
+                <button
+                    id="backToAccess"
+                    class="back-button"
+                    type="button"
+                >
+                    ← BACK
+                </button>
+
+                <div
+                    id="adminMessage"
+                    class="admin-message"
+                ></div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
          MAIN INTERFACE
-    ========================== -->
+    ====================================================== -->
 
-    <main id="mainInterface" class="main-interface">
+    <main
+        id="mainInterface"
+        class="main-interface"
+    >
 
-        <!-- Background grid -->
+        <!-- BACKGROUND GRID -->
+
         <div class="background-grid"></div>
 
-        <!-- Scanline -->
+        <!-- SCANLINE -->
+
         <div class="scanline"></div>
 
 
-        <!-- =========================
+        <!-- =================================================
              HUD CORNERS
-        ========================== -->
+        ================================================== -->
 
         <div class="hud-corner top-left"></div>
+
         <div class="hud-corner top-right"></div>
+
         <div class="hud-corner bottom-left"></div>
+
         <div class="hud-corner bottom-right"></div>
 
 
-        <!-- =========================
+        <!-- =================================================
              TOP HUD
-        ========================== -->
+        ================================================== -->
 
         <header class="top-hud">
 
@@ -87,8 +410,15 @@
                 <span class="status-dot"></span>
 
                 <div>
-                    <small>SYSTEM ID</small>
-                    <strong>VS-01</strong>
+
+                    <small>
+                        SYSTEM ID
+                    </small>
+
+                    <strong>
+                        VS-01
+                    </strong>
+
                 </div>
 
             </div>
@@ -98,7 +428,9 @@
 
                 <span class="top-line"></span>
 
-                <span>PERSONAL COMMAND INTERFACE</span>
+                <span>
+                    PERSONAL COMMAND INTERFACE
+                </span>
 
                 <span class="top-line"></span>
 
@@ -107,18 +439,22 @@
 
             <div class="system-time">
 
-                <span id="systemTime">00:00:00</span>
+                <span id="systemTime">
+                    00:00:00
+                </span>
 
-                <small>LOCAL SYSTEM TIME</small>
+                <small>
+                    LOCAL SYSTEM TIME
+                </small>
 
             </div>
 
         </header>
 
 
-        <!-- =========================
+        <!-- =================================================
              NAVIGATION
-        ========================== -->
+        ================================================== -->
 
         <nav class="main-nav">
 
@@ -165,17 +501,23 @@
         </nav>
 
 
-        <!-- =========================
+        <!-- =================================================
              HERO / HOME
-        ========================== -->
+        ================================================== -->
 
-        <section id="home" class="hero-section">
+        <section
+            id="home"
+            class="hero-section"
+        >
 
             <div class="hero-left">
 
                 <div class="classification">
+
                     <span></span>
+
                     PERSONAL CREATIVE SYSTEM
+
                 </div>
 
                 <p class="hero-intro">
@@ -183,15 +525,22 @@
                 </p>
 
                 <h1 class="hero-name">
+
                     VAIBHAV<br>
-                    <span>SHUKLA</span>
+
+                    <span>
+                        SHUKLA
+                    </span>
+
                 </h1>
 
                 <div class="hero-role">
 
                     <span class="role-line"></span>
 
-                    <span>CONTENT CREATOR</span>
+                    <span>
+                        CONTENT CREATOR
+                    </span>
 
                     <span class="role-line"></span>
 
@@ -210,9 +559,15 @@
                         class="primary-button"
                         onclick="openSystem()"
                     >
-                        <span class="button-icon">◈</span>
+
+                        <span class="button-icon">
+                            ◈
+                        </span>
+
                         ENTER SYSTEM
+
                     </button>
+
 
                     <a
                         href="https://www.youtube.com/@EduxVaibhav"
@@ -220,8 +575,13 @@
                         rel="noopener noreferrer"
                         class="secondary-button"
                     >
+
                         WATCH CONTENT
-                        <span>↗</span>
+
+                        <span>
+                            ↗
+                        </span>
+
                     </a>
 
                 </div>
@@ -229,9 +589,9 @@
             </div>
 
 
-            <!-- =========================
+            <!-- =================================================
                  CENTRAL CORE
-            ========================== -->
+            ================================================== -->
 
             <div class="core-area">
 
@@ -242,17 +602,25 @@
                 <div class="core">
 
                     <div class="core-outer outer-one"></div>
+
                     <div class="core-outer outer-two"></div>
+
                     <div class="core-outer outer-three"></div>
 
                     <div class="core-ring ring-one"></div>
+
                     <div class="core-ring ring-two"></div>
+
                     <div class="core-ring ring-three"></div>
 
                     <div class="core-lines"></div>
 
                     <div class="core-center">
-                        <span>VS</span>
+
+                        <span>
+                            VS
+                        </span>
+
                     </div>
 
                 </div>
@@ -264,17 +632,24 @@
             </div>
 
 
-            <!-- =========================
+            <!-- =================================================
                  RIGHT SYSTEM PANEL
-            ========================== -->
+            ================================================== -->
 
             <div class="system-panel">
 
                 <div class="panel-header">
 
                     <div>
-                        <small>SYSTEM MODULES</small>
-                        <h2>CAPABILITIES</h2>
+
+                        <small>
+                            SYSTEM MODULES
+                        </small>
+
+                        <h2>
+                            CAPABILITIES
+                        </h2>
+
                     </div>
 
                     <span class="panel-code">
@@ -296,11 +671,20 @@
                         </div>
 
                         <div class="module-info">
-                            <strong>CONTENT</strong>
-                            <small>CREATION SYSTEM</small>
+
+                            <strong>
+                                CONTENT
+                            </strong>
+
+                            <small>
+                                CREATION SYSTEM
+                            </small>
+
                         </div>
 
-                        <span class="module-arrow">→</span>
+                        <span class="module-arrow">
+                            →
+                        </span>
 
                     </button>
 
@@ -315,11 +699,20 @@
                         </div>
 
                         <div class="module-info">
-                            <strong>WEB DEVELOPMENT</strong>
-                            <small>DIGITAL SYSTEMS</small>
+
+                            <strong>
+                                WEB DEVELOPMENT
+                            </strong>
+
+                            <small>
+                                DIGITAL SYSTEMS
+                            </small>
+
                         </div>
 
-                        <span class="module-arrow">→</span>
+                        <span class="module-arrow">
+                            →
+                        </span>
 
                     </button>
 
@@ -334,11 +727,20 @@
                         </div>
 
                         <div class="module-info">
-                            <strong>VIDEO EDITING</strong>
-                            <small>VISUAL PROCESSING</small>
+
+                            <strong>
+                                VIDEO EDITING
+                            </strong>
+
+                            <small>
+                                VISUAL PROCESSING
+                            </small>
+
                         </div>
 
-                        <span class="module-arrow">→</span>
+                        <span class="module-arrow">
+                            →
+                        </span>
 
                     </button>
 
@@ -353,11 +755,20 @@
                         </div>
 
                         <div class="module-info">
-                            <strong>CANVA DESIGN</strong>
-                            <small>CREATIVE ENGINE</small>
+
+                            <strong>
+                                CANVA DESIGN
+                            </strong>
+
+                            <small>
+                                CREATIVE ENGINE
+                            </small>
+
                         </div>
 
-                        <span class="module-arrow">→</span>
+                        <span class="module-arrow">
+                            →
+                        </span>
 
                     </button>
 
@@ -372,11 +783,20 @@
                         </div>
 
                         <div class="module-info">
-                            <strong>PROJECTS</strong>
-                            <small>ACTIVE OPERATIONS</small>
+
+                            <strong>
+                                PROJECTS
+                            </strong>
+
+                            <small>
+                                ACTIVE OPERATIONS
+                            </small>
+
                         </div>
 
-                        <span class="module-arrow">→</span>
+                        <span class="module-arrow">
+                            →
+                        </span>
 
                     </button>
 
@@ -387,17 +807,24 @@
         </section>
 
 
-        <!-- =========================
+        <!-- =================================================
              PROFILE
-        ========================== -->
+        ================================================== -->
 
-        <section id="about" class="interface-section">
+        <section
+            id="about"
+            class="interface-section"
+        >
 
             <div class="section-heading">
 
-                <span>02 / PROFILE</span>
+                <span>
+                    02 / PROFILE
+                </span>
 
-                <h2>WHO IS <strong>VAIBHAV?</strong></h2>
+                <h2>
+                    WHO IS <strong>VAIBHAV?</strong>
+                </h2>
 
                 <p>
                     CREATOR PROFILE // PERSONAL DATA
@@ -427,9 +854,19 @@
                     </p>
 
                     <div class="skill-tags">
-                        <span>CLASS 11</span>
-                        <span>PCM</span>
-                        <span>COMPUTER SCIENCE</span>
+
+                        <span>
+                            CLASS 11
+                        </span>
+
+                        <span>
+                            PCM
+                        </span>
+
+                        <span>
+                            COMPUTER SCIENCE
+                        </span>
+
                     </div>
 
                 </div>
@@ -446,7 +883,10 @@
                     </div>
 
                     <p>
-                        <strong>CLASS 11</strong><br>
+                        <strong>
+                            CLASS 11
+                        </strong>
+                        <br>
                         PCM + COMPUTER SCIENCE
                     </p>
 
@@ -455,8 +895,15 @@
                     </p>
 
                     <div class="skill-tags">
-                        <span>LEARNING</span>
-                        <span>BUILDING</span>
+
+                        <span>
+                            LEARNING
+                        </span>
+
+                        <span>
+                            BUILDING
+                        </span>
+
                     </div>
 
                 </div>
@@ -468,7 +915,9 @@
                         ACHIEVEMENT // TECH
                     </span>
 
-                    <h3 style="font-size: 26px; margin-top: 32px;">
+                    <h3
+                        style="font-size: 26px; margin-top: 32px;"
+                    >
                         BEST STUDENT
                     </h3>
 
@@ -477,11 +926,27 @@
                     </p>
 
                     <div class="skill-tags">
-                        <span>PYTHON</span>
-                        <span>HTML</span>
-                        <span>CSS</span>
-                        <span>JAVASCRIPT</span>
-                        <span>FLASK</span>
+
+                        <span>
+                            PYTHON
+                        </span>
+
+                        <span>
+                            HTML
+                        </span>
+
+                        <span>
+                            CSS
+                        </span>
+
+                        <span>
+                            JAVASCRIPT
+                        </span>
+
+                        <span>
+                            FLASK
+                        </span>
+
                     </div>
 
                 </div>
@@ -491,17 +956,24 @@
         </section>
 
 
-        <!-- =========================
+        <!-- =================================================
              SKILLS
-        ========================== -->
+        ================================================== -->
 
-        <section id="skills" class="interface-section">
+        <section
+            id="skills"
+            class="interface-section"
+        >
 
             <div class="section-heading">
 
-                <span>03 / SYSTEM CAPABILITIES</span>
+                <span>
+                    03 / SYSTEM CAPABILITIES
+                </span>
 
-                <h2>CORE <strong>SKILLS</strong></h2>
+                <h2>
+                    CORE <strong>SKILLS</strong>
+                </h2>
 
                 <p>
                     CREATIVE & DIGITAL PROCESSING MODULES
@@ -515,17 +987,32 @@
                 <div class="skill-card">
 
                     <div class="skill-top">
-                        <span>01</span>
-                        <span>CREATIVE</span>
+
+                        <span>
+                            01
+                        </span>
+
+                        <span>
+                            CREATIVE
+                        </span>
+
                     </div>
 
-                    <h3>CANVA DESIGN</h3>
+                    <h3>
+                        CANVA DESIGN
+                    </h3>
 
                     <div class="skill-meter">
-                        <span style="width: 90%;"></span>
+
+                        <span
+                            style="width: 90%;"
+                        ></span>
+
                     </div>
 
-                    <small>DESIGN PROCESSING</small>
+                    <small>
+                        DESIGN PROCESSING
+                    </small>
 
                 </div>
 
@@ -533,17 +1020,32 @@
                 <div class="skill-card">
 
                     <div class="skill-top">
-                        <span>02</span>
-                        <span>TECH</span>
+
+                        <span>
+                            02
+                        </span>
+
+                        <span>
+                            TECH
+                        </span>
+
                     </div>
 
-                    <h3>WEB DEVELOPMENT</h3>
+                    <h3>
+                        WEB DEVELOPMENT
+                    </h3>
 
                     <div class="skill-meter">
-                        <span style="width: 82%;"></span>
+
+                        <span
+                            style="width: 82%;"
+                        ></span>
+
                     </div>
 
-                    <small>DIGITAL DEVELOPMENT</small>
+                    <small>
+                        DIGITAL DEVELOPMENT
+                    </small>
 
                 </div>
 
@@ -551,17 +1053,32 @@
                 <div class="skill-card">
 
                     <div class="skill-top">
-                        <span>03</span>
-                        <span>MEDIA</span>
+
+                        <span>
+                            03
+                        </span>
+
+                        <span>
+                            MEDIA
+                        </span>
+
                     </div>
 
-                    <h3>VIDEO EDITING</h3>
+                    <h3>
+                        VIDEO EDITING
+                    </h3>
 
                     <div class="skill-meter">
-                        <span style="width: 86%;"></span>
+
+                        <span
+                            style="width: 86%;"
+                        ></span>
+
                     </div>
 
-                    <small>VISUAL PROCESSING</small>
+                    <small>
+                        VISUAL PROCESSING
+                    </small>
 
                 </div>
 
@@ -569,17 +1086,32 @@
                 <div class="skill-card">
 
                     <div class="skill-top">
-                        <span>04</span>
-                        <span>MEDIA</span>
+
+                        <span>
+                            04
+                        </span>
+
+                        <span>
+                            MEDIA
+                        </span>
+
                     </div>
 
-                    <h3>CONTENT CREATION</h3>
+                    <h3>
+                        CONTENT CREATION
+                    </h3>
 
                     <div class="skill-meter">
-                        <span style="width: 88%;"></span>
+
+                        <span
+                            style="width: 88%;"
+                        ></span>
+
                     </div>
 
-                    <small>CONTENT SYSTEM</small>
+                    <small>
+                        CONTENT SYSTEM
+                    </small>
 
                 </div>
 
@@ -588,17 +1120,24 @@
         </section>
 
 
-        <!-- =========================
+        <!-- =================================================
              PROJECTS
-        ========================== -->
+        ================================================== -->
 
-        <section id="projects" class="interface-section">
+        <section
+            id="projects"
+            class="interface-section"
+        >
 
             <div class="section-heading">
 
-                <span>04 / OPERATIONS</span>
+                <span>
+                    04 / OPERATIONS
+                </span>
 
-                <h2>ACTIVE <strong>PROJECTS</strong></h2>
+                <h2>
+                    ACTIVE <strong>PROJECTS</strong>
+                </h2>
 
                 <p>
                     SELECTED DIGITAL OPERATIONS
@@ -609,6 +1148,9 @@
 
             <div class="projects-grid">
 
+
+                <!-- PROJECT 01 -->
+
                 <article class="project-card">
 
                     <div class="project-number">
@@ -617,7 +1159,9 @@
 
                     <div class="project-content">
 
-                        <span>WEB DEVELOPMENT</span>
+                        <span>
+                            WEB DEVELOPMENT
+                        </span>
 
                         <h3>
                             GARG GREEN ENERGY
@@ -642,6 +1186,8 @@
                 </article>
 
 
+                <!-- PROJECT 02 -->
+
                 <article class="project-card">
 
                     <div class="project-number">
@@ -650,7 +1196,9 @@
 
                     <div class="project-content">
 
-                        <span>WEB DEVELOPMENT</span>
+                        <span>
+                            WEB DEVELOPMENT
+                        </span>
 
                         <h3>
                             SHIVA ACADEMY
@@ -675,6 +1223,8 @@
                 </article>
 
 
+                <!-- PROJECT 03 -->
+
                 <article class="project-card">
 
                     <div class="project-number">
@@ -683,7 +1233,9 @@
 
                     <div class="project-content">
 
-                        <span>ESPORTS / WEB DEVELOPMENT</span>
+                        <span>
+                            ESPORTS / WEB DEVELOPMENT
+                        </span>
 
                         <h3>
                             ESPORTS CAREER CONTINUITY
@@ -708,6 +1260,8 @@
                 </article>
 
 
+                <!-- PROJECT 04 -->
+
                 <article class="project-card">
 
                     <div class="project-number">
@@ -716,7 +1270,9 @@
 
                     <div class="project-content">
 
-                        <span>CANVA PRESENTATION</span>
+                        <span>
+                            CANVA PRESENTATION
+                        </span>
 
                         <h3>
                             PPT 1
@@ -741,6 +1297,8 @@
                 </article>
 
 
+                <!-- PROJECT 05 -->
+
                 <article class="project-card">
 
                     <div class="project-number">
@@ -749,7 +1307,9 @@
 
                     <div class="project-content">
 
-                        <span>CANVA PRESENTATION</span>
+                        <span>
+                            CANVA PRESENTATION
+                        </span>
 
                         <h3>
                             PPT 2
@@ -778,17 +1338,24 @@
         </section>
 
 
-        <!-- =========================
+        <!-- =================================================
              CONTACT
-        ========================== -->
+        ================================================== -->
 
-        <section id="contact" class="interface-section contact-section">
+        <section
+            id="contact"
+            class="interface-section contact-section"
+        >
 
             <div class="section-heading">
 
-                <span>05 / COMMUNICATION</span>
+                <span>
+                    05 / COMMUNICATION
+                </span>
 
-                <h2>OPEN A <strong>CHANNEL</strong></h2>
+                <h2>
+                    OPEN A <strong>CHANNEL</strong>
+                </h2>
 
                 <p>
                     ESTABLISH DIGITAL CONNECTION
@@ -806,15 +1373,28 @@
                         <span class="signal-dot"></span>
 
                         <div>
-                            <small>COMMUNICATION STATUS</small>
-                            <strong>CHANNEL READY</strong>
+
+                            <small>
+                                COMMUNICATION STATUS
+                            </small>
+
+                            <strong>
+                                CHANNEL READY
+                            </strong>
+
                         </div>
 
                     </div>
 
                     <h3>
+
                         LET'S BUILD<br>
-                        SOMETHING <span>CREATIVE.</span>
+
+                        SOMETHING
+                        <span>
+                            CREATIVE.
+                        </span>
+
                     </h3>
 
                     <p>
@@ -829,9 +1409,17 @@
                         rel="noopener noreferrer"
                         class="youtube-channel"
                     >
-                        <span>▶</span>
+
+                        <span>
+                            ▶
+                        </span>
+
                         YOUTUBE CHANNEL
-                        <b>↗</b>
+
+                        <b>
+                            ↗
+                        </b>
+
                     </a>
 
                 </div>
@@ -839,9 +1427,17 @@
 
                 <div class="contact-radar">
 
-                    <div class="radar-circle circle-a"></div>
-                    <div class="radar-circle circle-b"></div>
-                    <div class="radar-circle circle-c"></div>
+                    <div
+                        class="radar-circle circle-a"
+                    ></div>
+
+                    <div
+                        class="radar-circle circle-b"
+                    ></div>
+
+                    <div
+                        class="radar-circle circle-c"
+                    ></div>
 
                     <div class="radar-scan"></div>
 
@@ -849,15 +1445,21 @@
                         VS
                     </div>
 
-                    <span class="radar-label radar-top">
+                    <span
+                        class="radar-label radar-top"
+                    >
                         CHANNEL
                     </span>
 
-                    <span class="radar-label radar-right">
+                    <span
+                        class="radar-label radar-right"
+                    >
                         READY
                     </span>
 
-                    <span class="radar-label radar-bottom">
+                    <span
+                        class="radar-label radar-bottom"
+                    >
                         ONLINE
                     </span>
 
@@ -868,9 +1470,9 @@
         </section>
 
 
-        <!-- =========================
+        <!-- =================================================
              FOOTER
-        ========================== -->
+        ================================================== -->
 
         <footer class="system-footer">
 
@@ -883,8 +1485,11 @@
             </div>
 
             <div>
+
                 SYSTEM ONLINE
+
                 <span class="status-dot"></span>
+
             </div>
 
         </footer>
@@ -892,24 +1497,30 @@
     </main>
 
 
-    <!-- =========================
+    <!-- =====================================================
          MODULE POPUP
-    ========================== -->
+    ====================================================== -->
 
-    <div id="moduleOverlay" class="module-overlay">
+    <div
+        id="moduleOverlay"
+        class="module-overlay"
+    >
 
         <div class="module-window">
 
             <button
                 class="close-module"
                 onclick="closeSystem()"
+                aria-label="Close system module"
             >
                 ×
             </button>
 
             <div class="window-top">
 
-                <span>SYSTEM MODULE</span>
+                <span>
+                    SYSTEM MODULE
+                </span>
 
                 <span id="moduleStatus">
                     ONLINE
@@ -946,11 +1557,13 @@
     </div>
 
 
-    <!-- =========================
+    <!-- =====================================================
          JAVASCRIPT
-    ========================== -->
+    ====================================================== -->
 
-    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    <script
+        src="{{ url_for('static', filename='js/main.js') }}"
+    ></script>
 
 </body>
 </html>
